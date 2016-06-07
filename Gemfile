@@ -25,6 +25,9 @@ gem 'devise-i18n-views'
 # Policies
 gem 'pundit'
 
+#Seed
+gem 'faker'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

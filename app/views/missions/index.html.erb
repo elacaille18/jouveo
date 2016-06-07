@@ -1,0 +1,45 @@
+<div class="wrapper-gray">
+  <div class="container" id="dashboard-mission-headers">
+    <h1><%= t ".title" %></h1>
+    <div id="tabs-navigation">
+      <ul class="tabs list-inline">
+        <li class="tab active" data-target="#current">
+          <div >
+            <p><%= t ".current" %></p>
+          </div>
+        </li>
+        <li class="tab" data-target="#history">
+          <div class="tab" data-target="#history">
+            <p><%= t ".history" %></p>
+          </div>
+        </li>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <div class="container">
+    <div class="tab-content" id="current">
+      <% @missions.each do |mission|%>
+        <div class="row">
+          <div class="col-xs-12">
+            <%= render "missions/card_mission", mission: mission%>
+          </div>
+        </div>
+      <%end%>
+    </div>
+    <div class="tab-content hidden" id="history">
+     <!-- temporaire -->
+     <% @missions.each do |mission|%>
+        <div class="row">
+          <div class="col-xs-12">
+            <%= render "missions/card_mission", mission: mission%>
+          </div>
+        </div>
+      <%end%>
+    </div>
+
+  </div>
+</div>

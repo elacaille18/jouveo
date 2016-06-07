@@ -2,7 +2,7 @@
 <div class="banner" style="background-image: url(<%= image_path 'cover.jpg'%>);">
   <div class="banner-content">
     <h1><%= t "welcome", default: "Welcome on Jouveo"%></h1>
-    <p><%= t "tagline", default: "Overview and manage your missions with Jouve&Associés" %></p>
+    <p><%= t "tagline", default: "Overview and manage your missions with Jouve & Associés" %></p>
     <% if user_signed_in? %>
       <%=link_to missions_path do %>
         <button class="btn btn-danger"><%= t "home-button", default: "My missions" %></button>
