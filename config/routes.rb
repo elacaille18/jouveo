@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'pages#home'
 
   # Locales for languages
-  scope '(:locale)', locale: /fr|es/ do
+  scope '(:locale)', locale: /fr|en/ do
+    root to: 'pages#home'
+    devise_for :users
     resources :missions
   end
 

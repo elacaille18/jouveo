@@ -1,2 +1,4 @@
 fr:
   hello: "Bonjour"
+  sign_in: "Se connecter"
+  sign_up: "S'inscrire"
