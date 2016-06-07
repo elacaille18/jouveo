@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'pages#home'
+
+  # Locales for languages
+  scope '(:locale)', locale: /fr|en/ do
+    root to: 'pages#home'
+    devise_for :users
+    resources :missions
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
