@@ -19,6 +19,8 @@ gem 'autoprefixer-rails'
 
 #locales
 gem 'i18n'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 group :development, :test do
   gem 'binding_of_caller'
