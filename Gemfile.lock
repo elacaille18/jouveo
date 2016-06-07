@@ -180,6 +180,7 @@ DEPENDENCIES
   devise
   figaro
   font-awesome-sass
+  i18n
   jbuilder (~> 2.0)
   jquery-rails
   pg
