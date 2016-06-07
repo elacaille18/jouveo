@@ -26,5 +26,9 @@
   opacity: 0;
 }
 .card-mission:hover {
-  border-left: 4px solid $blue;
+  border-left: 4px solid $red;
+}
+
+.fadded {
+  opacity:0.6;
 }

@@ -9,16 +9,14 @@
           </div>
         </li>
         <li class="tab" data-target="#history">
-          <div class="tab" data-target="#history">
+          <div>
             <p><%= t ".history" %></p>
           </div>
         </li>
-      </div>
+      </ul>
     </div>
-
-
-
   </div>
+
 
   <div class="container">
     <div class="tab-content" id="current">
@@ -43,3 +41,20 @@
 
   </div>
 </div>
+
+
+<% content_for(:after_js) do %>
+  <script>
+
+    $(document).on('ready', function() {
+
+      $( ".card-mission" ).hover(function() {
+          $(".card-mission").addClass('fadded');
+          $(this).removeClass('fadded');
+        }, function () {
+          $(".card-mission").removeClass("fadded");
+        }
+      );
+    })
+  </script>
+<% end %>

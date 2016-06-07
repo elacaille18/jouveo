@@ -1,5 +1,6 @@
 #tabs-navigation .list-inline {
   margin-left:0px;
+  margin-top:20px;
 }
 
 
@@ -21,13 +22,19 @@
 
 }
 
+.tab {
+  background-color:$gray-lighter;
+}
 
 .active {
   border-bottom: 3px solid $red !important;
+  background-color: white;
 
 }
 
 .tab-content {
   border: 1px solid $gray-lighter;
   padding: 30px 10px;
+  margin-bottom: 20px;
 }
+

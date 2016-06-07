@@ -6,11 +6,12 @@ class MissionPolicy < ApplicationPolicy
   end
 
   def index?
-    user_is_owner_or_admin
+    user_is_owner_or_admin?
   end
 
   def show?
-    false  # No show for trips, they are displayed in the dashboard
+    true
+    #user_is_owner_or_admin?  A faire plus tard une fois que les admins seront crées
   end
 
   def new?
