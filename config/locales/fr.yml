@@ -12,7 +12,8 @@ fr:
       history: "Historique"
     show:
       created_at: "Créée le"
-
+      status: "Statut"
+      candidate: "candidat"
   time:
     formats:
       date_month_year_concise: '%d %B %Y'

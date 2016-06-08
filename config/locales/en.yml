@@ -33,6 +33,8 @@ en:
       history: "History"
     show:
       created_at: "Created on"
+      status: "Status"
+      candidate: "candidate"
   time:
     formats:
       date_month_year_concise: '%B %d, %Y'
