@@ -23,3 +23,18 @@ en:
   hello: "Hello everyone"
   sign_in: "Log in"
   sign_up: "Sign up"
+  home-button: "My current missions"
+  welcome: "Welcome on Jouveo"
+  tagline: "Overview and manage your missions with Jouve & Associés"
+  missions:
+    index:
+      title: "Your missions"
+      current: "Current"
+      history: "History"
+    show:
+      created_at: "Created on"
+      status: "Status"
+      candidate: "candidate"
+  time:
+    formats:
+      date_month_year_concise: '%B %d, %Y'

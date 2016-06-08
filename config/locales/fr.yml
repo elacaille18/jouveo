@@ -2,3 +2,33 @@ fr:
   hello: "Bonjour"
   sign_in: "Se connecter"
   sign_up: "S'inscrire"
+  home-button: "Mes missions"
+  welcome: "Bienvenue sur Jouveo"
+  tagline: "Superviser et gérer vos missions avec Jouve & Associés"
+  missions:
+    index:
+      title: "Vos missions"
+      current: "En cours"
+      history: "Historique"
+    show:
+      created_at: "Créée le"
+      status: "Statut"
+      candidate: "candidat"
+  time:
+    formats:
+      date_month_year_concise: '%d %B %Y'
+  date:
+    month_names:
+    -
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - écembre

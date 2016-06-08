@@ -1,0 +1,40 @@
+#tabs-navigation .list-inline {
+  margin-left:0px;
+  margin-top:20px;
+}
+
+
+#tabs-navigation ul {
+  margin-bottom:-11px;
+  li {
+    padding: 5px 25px;
+    margin-bottom: 8px;
+    margin-left: 0px;
+
+    border: 1px solid $gray-lighter;
+    border-bottom: 0;
+
+    border-radius: 4px 4px 0 0;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+}
+
+.tab {
+  background-color:$gray-lighter;
+}
+
+.active {
+  border-bottom: 3px solid $red !important;
+  background-color: white;
+
+}
+
+.tab-content {
+  border: 1px solid $gray-lighter;
+  padding: 30px 10px;
+  margin-bottom: 20px;
+}
+
