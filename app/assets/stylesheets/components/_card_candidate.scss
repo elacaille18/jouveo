@@ -1,0 +1,22 @@
+.card-candidate {
+  background-color: white;
+  padding: 16px;
+  //border: 0.5px solid $red;
+  border-radius: $border-radius-base;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15),-1px 0 0 rgba(0,0,0,0.03),1px 0 0 rgba(0,0,0,0.03),0 1px 0 rgba(0,0,0,0.12);
+}
+
+
+.actions-jouve {
+  display: flex;
+  flex-direction: column;
+  .candidate-status {
+    flex: 0 1 auto;
+  }
+}
+
+.candidate-status {
+  font-style: italic;
+  font-size: 14px;
+}

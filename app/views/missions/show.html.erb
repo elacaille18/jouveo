@@ -1,21 +1,25 @@
 <div class="container padded">
   <div class="row">
     <div class="col-xs-12">
-      <h4><%= @mission.title %></h4>
+      <h3><%= @mission.title %></h3>
       <div class="mission-date">
         <p><%= I18n.t('.missions.show.created_at') %> : <%= I18n.localize @mission.created_at, format: :date_month_year_concise%></p>
       </div>
       <div class="mission-status">
         <%= I18n.t('.missions.show.status')%> : <!-- Rajouter le status dans la DB -->
       </div>
+      <div id="candidates-count">
+        <h4><%=pluralize(@mission.candidates.size, t(".candidate"))%></h4>
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <h4><%=pluralize(@mission.candidates.size, t(".candidate"))%></h4>
+<div class="wrapper-gray-light">
+  <div class="container">
+    <div class="candidates-list">
       <%@mission.candidates.each do |candidate| %>
-        <p>Carte du candidat</p>
+        <%= render "candidates/card_candidate", candidate: candidate %>
       <%end%>
     </div>
   </div>
