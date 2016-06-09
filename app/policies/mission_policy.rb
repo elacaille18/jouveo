@@ -23,7 +23,8 @@ class MissionPolicy < ApplicationPolicy
   end
 
   def edit
-    update?
+    # update?
+    true
   end
 
   def trip_accept_mission?
@@ -35,7 +36,8 @@ class MissionPolicy < ApplicationPolicy
 
   def update?
     #record.user <=> @trip.user AND user <=> current_user dans les politiques
-    user_is_owner_or_admin? # Only trip creator can update it and admin
+    #user_is_owner_or_admin? # Only trip creator can update it and admin
+    true
   end
 
   def destroy?

@@ -1,11 +1,15 @@
-<%= simple_form_for ([mission, candidate]) do |f|%>
-  <%= f.input :first_name%>
-  <%= f.input :last_name%>
-  <%= f.input :status, collection: Candidate::STATUS%>
-  <%= f.input :compensation%>
-  <%= f.input :resume%>
-  <%= f.input :resume_cache, as: :hidden %>
-  <div class="text-center">
-    <%= f.button :submit, class:'btn navbar-wagon-button'%>
-  </div>
-<%end%>
+<div id="form-candidate-content">
+  <%= simple_form_for ([mission, candidate]) do |f|%>
+    <%= f.input :first_name%>
+    <%= f.input :last_name%>
+    <%= f.input :status, collection: Candidate::STATUS%>
+    <%= f.input :compensation_fix%>
+    <%= f.input :compensation_variable%>
+    <%= f.input :compensation_others%>
+    <%= f.input :resume%>
+    <%= f.input :resume_cache, as: :hidden %>
+    <div class="text-center">
+      <%= f.button :submit, class:'btn navbar-wagon-button'%>
+    </div>
+  <%end%>
+</div>

@@ -4,6 +4,7 @@
 
 // CSS de la show mission
 
+// ------------- Mission infos ------------------//
 .wrapper-gray-light {
   background-color: rgb(241,241,241);
 }
@@ -11,4 +12,35 @@
 .candidates-list {
   margin: 40px 0;
   min-height: 50vh;
+}
+
+.mission-status ul {
+  margin-bottom: 0;
+}
+
+#candidates-count {
+  margin-top: 25px;
+}
+
+// -------------- Team Jouve ---------------------//
+.associate, .consultant, .assistant {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  .position {
+    font-size: 14px;
+    font-style: italic;
+  }
+}
+
+.team-jouve {
+  padding-top: 20px;
+}
+
+.team-avatar {
+  width: 35%;
+}
+
+.team-infos {
+  flex: 1 0 auto;
 }

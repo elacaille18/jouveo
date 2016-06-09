@@ -1,5 +1,5 @@
 class MissionsController < ApplicationController
-  before_action :set_mission, only: [:show]
+  before_action :set_mission, only: [:show, :edit, :update]
   def index
     @missions = policy_scope(Mission)
   end
@@ -24,7 +24,19 @@ class MissionsController < ApplicationController
     end
   end
 
+  def edit
+    # mission is set in private
+    authorize @mission
+  end
+
   def update
+    @mission.update(mission_params)
+    authorize @mission
+    if @mission.save
+      redirect_to mission_path(@mission)
+    else
+      render :edit
+    end
   end
 
 
@@ -35,6 +47,6 @@ class MissionsController < ApplicationController
   end
 
   def mission_params
-    params.require(:mission).permit(:title)
+    params.require(:mission).permit(:title, :status)
   end
 end
