@@ -27,6 +27,7 @@ en:
   welcome: "Welcome on Jouveo"
   tagline: "Overview and manage your missions with Jouve & Associés"
   close: "Close"
+  create_mission: "Create a mission"
   missions:
     index:
       title: "Your missions"

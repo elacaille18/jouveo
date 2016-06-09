@@ -6,6 +6,7 @@ fr:
   welcome: "Bienvenue sur Jouveo"
   tagline: "Superviser et gérer vos missions avec Jouve & Associés"
   close: "Fermer"
+  create_mission: "Créer une mission"
   missions:
     index:
       title: "Vos missions"

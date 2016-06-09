@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /fr|en/ do
     root to: 'pages#home'
     devise_for :users
-    resources :missions, only: [:index, :show] do
+    resources :missions, only: [:index, :new, :create, :edit, :update, :show] do
       resources :candidates, only: [:new, :create, :edit, :update, :destroy]
     end
   end
