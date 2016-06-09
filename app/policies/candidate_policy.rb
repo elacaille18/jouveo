@@ -24,4 +24,9 @@ class CandidatePolicy < ApplicationPolicy
     true
     # A verifier
   end
+
+  def destroy?
+    # user is admin
+    true
+  end
 end

@@ -1,6 +1,6 @@
 class CandidatesController < ApplicationController
   before_action :set_mission, only: [:new, :create, :edit, :update, :destroy]
-  before_action :find_candidate, only: [:edit, :update]
+  before_action :find_candidate, only: [:edit, :update, :destroy]
 
   def new
     @candidate = Candidate.new
@@ -28,11 +28,21 @@ class CandidatesController < ApplicationController
   def update
     @candidate.update(candidate_params)
     authorize @candidate
-    redirect_to mission_path(@candidate.mission)
+    if @candidate.save
+      redirect_to mission_path(@candidate.mission)
+    else
+      render :edit
+    end
   end
 
 
   def destroy
+    # a voir si on detruit definitivement
+    # pour l'instant j'enlève seulement de la mission
+    @candidate.mission = nil
+    @candidate.save
+    authorize @candidate
+    redirect_to mission_path(@mission)
   end
 
   private
