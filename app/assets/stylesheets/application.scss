@@ -19,3 +19,17 @@
 .translation_missing {
   background-color: red;
 }
+
+a {
+  color: rgb(238, 95, 91);
+  &:hover {
+    color: #E62117;
+  }
+}
+
+.btn-link {
+  color: rgb(238, 95, 91);
+  &:hover {
+    color: #E62117;
+  }
+}
