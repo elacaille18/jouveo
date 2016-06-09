@@ -26,6 +26,7 @@ en:
   home-button: "My current missions"
   welcome: "Welcome on Jouveo"
   tagline: "Overview and manage your missions with Jouve & Associés"
+  close: "Close"
   missions:
     index:
       title: "Your missions"

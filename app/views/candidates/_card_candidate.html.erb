@@ -12,7 +12,16 @@
         <h4> <%= candidate.first_name%> <%= candidate.last_name.upcase%> </h4>
       </div>
       <div class="resume-link">
-        <p><%= I18n.t(".candidates.resume")%></p>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modal_<%=candidate.id%>">
+          <%= I18n.t(".candidates.resume")%>
+        </button>
+      </div>
+      <div class="collapse-arrow text-center">
+        <%=link_to "#collapse_#{candidate.id}",
+            data: {toggle:"collapse"},
+            aria: {expanded: false, controls:"collapseExample"} do %>
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
+        <%end%>
       </div>
     </div>
 
@@ -20,8 +29,12 @@
       <div class="actions-jouve">
         <div class="action-admin text-right">
           <p>
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            <i class="fa fa-trash" aria-hidden="true"></i>
+            <%= link_to edit_mission_candidate_path(mission_id:candidate.mission, id: candidate.id ) do %>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <% end%>
+            <%= link_to mission_candidate_path(mission_id:candidate.mission, id: candidate.id), method: :delete, data: { confirm: "Etes-vous sure?" } do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            <%end%>
           </p>
         </div>
         <div class="candidate-status">
@@ -35,11 +48,6 @@
           <%end%>
 
         </div>
-        <%=link_to "#collapse_#{candidate.id}",
-                data: {toggle:"collapse"},
-                aria: {expanded: false, controls:"collapseExample"} do%>
-          <i class="fa fa-angle-down" aria-hidden="true"></i>
-        <%end%>
       </div>
     </div>
 
@@ -52,6 +60,28 @@
             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
           </div>
         </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="modal_<%=candidate.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title text-center" id="myModalLabel"><%= candidate.first_name%> <%= candidate.last_name.upcase%></h4>
+      </div>
+      <div class="modal-body">
+        <%= cl_image_tag candidate.resume, :format => :png%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= I18n.t(".close") %></button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
     </div>
   </div>
 </div>

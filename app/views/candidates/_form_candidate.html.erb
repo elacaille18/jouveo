@@ -1,0 +1,11 @@
+<%= simple_form_for ([mission, candidate]) do |f|%>
+  <%= f.input :first_name%>
+  <%= f.input :last_name%>
+  <%= f.input :status, collection: Candidate::STATUS%>
+  <%= f.input :compensation%>
+  <%= f.input :resume%>
+  <%= f.input :resume_cache, as: :hidden %>
+  <div class="text-center">
+    <%= f.button :submit, class:'btn navbar-wagon-button'%>
+  </div>
+<%end%>
