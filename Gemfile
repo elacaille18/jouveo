@@ -25,8 +25,13 @@ gem 'devise-i18n-views'
 # Policies
 gem 'pundit'
 
-#Seed
+# Seed
 gem 'faker'
+
+# Upload
+gem 'cloudinary'
+gem 'carrierwave'
+
 
 group :development, :test do
   gem 'binding_of_caller'
