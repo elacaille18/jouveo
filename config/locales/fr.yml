@@ -14,6 +14,12 @@ fr:
       created_at: "Créée le"
       status: "Statut"
       candidate: "candidat"
+  candidates:
+    resume: "CV"
+    status: "Statut"
+    contact_in_progress: "Contact en cours"
+    jouve_interviewing: "Entretien Jouve"
+    client_interviewing: "Entretien client"
   time:
     formats:
       date_month_year_concise: '%d %B %Y'
