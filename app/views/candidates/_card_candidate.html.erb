@@ -13,6 +13,7 @@
       </div>
       <div class="resume-link">
         <p><%= I18n.t(".candidates.resume")%></p>
+        <%= cl_image_tag candidate.resume, height: 500, width: 400, crop: :fill, :format => :png%>
       </div>
     </div>
 
@@ -20,7 +21,9 @@
       <div class="actions-jouve">
         <div class="action-admin text-right">
           <p>
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <%= link_to edit_mission_candidate_path(mission_id:candidate.mission, id: candidate.id ) do%>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <% end%>
             <i class="fa fa-trash" aria-hidden="true"></i>
           </p>
         </div>

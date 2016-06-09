@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /fr|en/ do
     root to: 'pages#home'
     devise_for :users
-    resources :missions, only: [:index, :show]
+    resources :missions, only: [:index, :show] do
+      resources :candidates, only: [:new, :create, :edit, :update]
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,4 +1,7 @@
 class Candidate < ActiveRecord::Base
+  # Uploads
+  mount_uploader :resume, ResumeUploader
+
   # Associations
   belongs_to :mission
   has_many :contracts
@@ -11,4 +14,6 @@ class Candidate < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :status, inclusion: {in: STATUS}
+
+
 end

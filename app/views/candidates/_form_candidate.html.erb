@@ -1,0 +1,8 @@
+<%= simple_form_for ([mission, candidate]) do |f|%>
+  <%= f.input :first_name%>
+  <%= f.input :last_name%>
+  <%= f.input :compensation%>
+  <%= f.input :resume%>
+  <%= f.input :resume_cache, as: :hidden %>
+  <%= f.button :submit%>
+<%end%>
