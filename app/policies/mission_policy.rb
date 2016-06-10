@@ -1,7 +1,7 @@
 class MissionPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(user: user)
+      scope.where("user_id = ? or associate_id = ? or consultant_id = ? or assistant_id = ?", user, user, user, user)
     end
   end
 
@@ -10,7 +10,7 @@ class MissionPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    user_is_part_of_mission?
     #user_is_owner_or_admin?  A faire plus tard une fois que les admins seront crées
   end
 
@@ -23,8 +23,8 @@ class MissionPolicy < ApplicationPolicy
   end
 
   def edit
-    # update?
-    true
+    update?
+
   end
 
   def trip_accept_mission?
@@ -37,7 +37,7 @@ class MissionPolicy < ApplicationPolicy
   def update?
     #record.user <=> @trip.user AND user <=> current_user dans les politiques
     #user_is_owner_or_admin? # Only trip creator can update it and admin
-    true
+    user_is_part_of_mission
   end
 
   def destroy?
@@ -45,6 +45,10 @@ class MissionPolicy < ApplicationPolicy
   end
 
   private
+
+  def user_is_part_of_mission?
+    record.user == user || record.associate == user || record.consultant == user || record.assistant == user
+  end
   def user_is_owner_or_admin?
     user.admin || record.user == user
   end

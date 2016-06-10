@@ -1,7 +1,7 @@
 class MissionsController < ApplicationController
   before_action :set_mission, only: [:show, :edit, :update]
   def index
-    @missions = policy_scope(Mission)
+    @missions = policy_scope(Mission).order(created_at: :desc)
   end
 
   def show
@@ -10,6 +10,7 @@ class MissionsController < ApplicationController
 
   def new
     @mission = Mission.new()
+    @team_jouve = User.team_jouve
     authorize @mission
   end
 
@@ -26,6 +27,7 @@ class MissionsController < ApplicationController
 
   def edit
     # mission is set in private
+    @team_jouve = User.team_jouve
     authorize @mission
   end
 
@@ -47,6 +49,6 @@ class MissionsController < ApplicationController
   end
 
   def mission_params
-    params.require(:mission).permit(:title, :status)
+    params.require(:mission).permit(:title, :status, :company_id, :associate_id, :consultant_id, :assistant_id)
   end
 end
