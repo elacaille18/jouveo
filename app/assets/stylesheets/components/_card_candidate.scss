@@ -18,13 +18,36 @@
 
 .candidate-status {
   font-style: italic;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .collapse-arrow {
   font-size: 20px;
   font-weight: bold;
 }
+
+
+// Commentaires
+// .candidate-comments {
+//   display:flex;
+//   margin-top: 20px;
+//   margin-bottom: 10px;
+//   h5 {
+//     text-decoration: underline;
+//   }
+// }
+
+// .jouve-comments, .client-comments {
+//   // max-height: px;
+//   // overflow-y: scroll
+// }
+
+// .jouve-comments {
+//   // flex:50%;
+// }
+// .client-comments {
+//   // flex: 0 1 auto;
+// }
 // Modal design
 
 .modal-body img {

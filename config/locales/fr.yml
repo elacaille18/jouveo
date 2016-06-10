@@ -6,6 +6,7 @@ fr:
   welcome: "Bienvenue sur Jouveo"
   tagline: "Superviser et gérer vos missions avec Jouve & Associés"
   close: "Fermer"
+  create_mission: "Créer une mission"
   missions:
     index:
       title: "Vos missions"
@@ -15,6 +16,15 @@ fr:
       created_at: "Créée le"
       status: "Statut"
       candidate: "candidat"
+      associate: "Associé(e)"
+      consultant: "Consultant(e)"
+      assistant: "Assistant(e)"
+    in_progress: "En cours"
+    closed: "Fermée"
+    cancelled: "Annulée"
+    edit_mission: "Modifier la mission"
+    add_candidate: "Ajouter un candidat"
+    team: "L'equipe J&A"
   candidates:
     resume: "CV"
     status: "Statut"

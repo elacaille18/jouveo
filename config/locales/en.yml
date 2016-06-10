@@ -27,6 +27,7 @@ en:
   welcome: "Welcome on Jouveo"
   tagline: "Overview and manage your missions with Jouve & Associés"
   close: "Close"
+  create_mission: "Create a mission"
   missions:
     index:
       title: "Your missions"
@@ -36,6 +37,15 @@ en:
       created_at: "Created on"
       status: "Status"
       candidate: "candidate"
+      associate: "Associate"
+      consultant: "Consultant"
+      assistant: "Assistant"
+    in_progress: "In progress"
+    closed: "Closed"
+    cancelled: "Cancelled"
+    edit_mission: "Edit the mission"
+    add_candidate: "Add a candidate"
+    team: "J&A team"
   candidates:
     resume: "Resume"
     status: "Status"

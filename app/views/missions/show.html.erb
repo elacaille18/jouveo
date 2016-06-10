@@ -1,17 +1,84 @@
 <div class="container padded">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-sm-8">
       <h3><%= @mission.title %></h3>
+      <h4><%= @mission.company.name.capitalize%></h4>
       <div class="mission-date">
         <p><%= I18n.t('.missions.show.created_at') %> : <%= I18n.localize @mission.created_at, format: :date_month_year_concise%></p>
       </div>
       <div class="mission-status">
-        <%= I18n.t('.missions.show.status')%> : <!-- Rajouter le status dans la DB -->
+        <ul class="list-inline">
+          <li>
+            <%= I18n.t('.missions.show.status')%> :
+          </li>
+          <li>
+            <% case @mission.status%>
+              <% when "in_progress"%>
+                <p> <%= I18n.t(".missions.in_progress") %></p>
+              <% when "closed"%>
+                <p> <%= I18n.t(".missions.closed") %></p>
+              <% when "cancelled"%>
+                <p> <%= I18n.t(".missions.cancelled") %></p>
+            <%end%>
+          </li>
+        </ul>
       </div>
+
+      <p>
+        <%= link_to I18n.t(".missions.edit_mission"), edit_mission_path(@mission) %>
+      </p>
+
       <div id="candidates-count">
         <h4><%=pluralize(@mission.candidates.size, t(".candidate"))%></h4>
       </div>
+      <p>
+        <%= link_to new_mission_candidate_path(@mission) do %>
+          <i class="fa fa-plus" aria-hidden="true"></i> <%= I18n.t(".missions.add_candidate")%>
+        <%end%>
+      </p>
     </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <div class="team-jouve">
+          <h4 class="text-center"><%= I18n.t(".missions.team")%></h4>
+        <div class="associate">
+          <div class="team-avatar text-center">
+            <%= image_tag "http://placehold.it/30x30", class: "avatar-very-large" %>
+          </div>
+          <div class="team-infos">
+
+              <div class="name">Henri Queno</div>
+              <div class="position"><%= I18n.t(".missions.show.associate")%></div>
+
+          </div>
+        </div>
+
+        <div class="consultant">
+          <div class="team-avatar text-center">
+            <%= image_tag "http://placehold.it/30x30", class: "avatar-large" %>
+          </div>
+          <div class="team-infos">
+
+              <div class="name">Henri Queno</div>
+              <div class="position"><%= I18n.t(".missions.show.consultant")%></div>
+
+          </div>
+        </div>
+
+        <div class="assistant">
+          <div class="team-avatar text-center">
+            <%= image_tag "http://placehold.it/30x30", class: "avatar-large" %>
+          </div>
+          <div class="team-infos">
+
+              <div class="name">Henri Queno</div>
+              <div class="position"><%= I18n.t(".missions.show.assistant")%></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
