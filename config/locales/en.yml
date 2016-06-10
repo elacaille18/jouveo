@@ -52,6 +52,8 @@ en:
     contact_in_progress: "Contact in progress"
     jouve_interviewing: "Jouve interview"
     client_interviewing: "Client interview"
+  users:
+    edit_profile: "Edit my profile"
   time:
     formats:
       date_month_year_concise: '%B %d, %Y'

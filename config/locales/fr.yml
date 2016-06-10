@@ -31,6 +31,8 @@ fr:
     contact_in_progress: "Contact en cours"
     jouve_interviewing: "Entretien Jouve"
     client_interviewing: "Entretien client"
+  users:
+    edit_profile: "Modifier mon profil"
   time:
     formats:
       date_month_year_concise: '%d %B %Y'

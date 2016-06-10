@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     root to: 'pages#home'
 
     # Profile page
-    get 'profile' => 'users#profile'
+    get 'profile', to: 'users#profile'
+    get 'profile/edit', to: 'users#edit'
 
     # Users routes
     devise_for :users
