@@ -1,6 +1,7 @@
 <div id="form-mission-content">
   <%= simple_form_for (mission) do |f|%>
     <%= f.input :title%>
+    <%= f.input :company%>
     <%= f.input :status, collection: Mission::STATUS%>
     <div class="text-center">
       <%= f.button :submit, class:'btn navbar-wagon-button'%>

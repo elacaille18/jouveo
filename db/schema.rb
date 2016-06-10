@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610090326) do
+ActiveRecord::Schema.define(version: 20160610091400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,13 +64,19 @@ ActiveRecord::Schema.define(version: 20160610090326) do
   create_table "missions", force: :cascade do |t|
     t.string   "title"
     t.integer  "user_id"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-    t.string   "status",     default: "in_progress"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "status",        default: "in_progress"
     t.integer  "company_id"
+    t.integer  "associate_id"
+    t.integer  "consultant_id"
+    t.integer  "assistant_id"
   end
 
+  add_index "missions", ["assistant_id"], name: "index_missions_on_assistant_id", using: :btree
+  add_index "missions", ["associate_id"], name: "index_missions_on_associate_id", using: :btree
   add_index "missions", ["company_id"], name: "index_missions_on_company_id", using: :btree
+  add_index "missions", ["consultant_id"], name: "index_missions_on_consultant_id", using: :btree
   add_index "missions", ["user_id"], name: "index_missions_on_user_id", using: :btree
 
   create_table "schools", force: :cascade do |t|
@@ -105,4 +111,7 @@ ActiveRecord::Schema.define(version: 20160610090326) do
   add_foreign_key "diplomas", "schools"
   add_foreign_key "missions", "companies"
   add_foreign_key "missions", "users"
+  add_foreign_key "missions", "users", column: "assistant_id"
+  add_foreign_key "missions", "users", column: "associate_id"
+  add_foreign_key "missions", "users", column: "consultant_id"
 end
