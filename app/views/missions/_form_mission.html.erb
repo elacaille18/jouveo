@@ -1,8 +1,13 @@
 <div id="form-mission-content">
   <%= simple_form_for (mission) do |f|%>
     <%= f.input :title%>
-    <%= f.input :company%>
+
+    <%= f.association :company, label_method: :name, value_method: :id, include_blank: false%>
     <%= f.input :status, collection: Mission::STATUS%>
+    <%= f.association :associate, collection: team_jouve, label_method: :full_name, value_method: :id %>
+    <%= f.association :consultant, collection: team_jouve, label_method: :full_name, value_method: :id %>
+    <%= f.association :assistant, collection: team_jouve, label_method: :full_name, value_method: :id  %>
+
     <div class="text-center">
       <%= f.button :submit, class:'btn navbar-wagon-button'%>
     </div>
