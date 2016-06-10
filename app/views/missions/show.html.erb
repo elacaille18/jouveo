@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-8">
       <h3><%= @mission.title %></h3>
+      <h4><%= @mission.company.name.capitalize%></h4>
       <div class="mission-date">
         <p><%= I18n.t('.missions.show.created_at') %> : <%= I18n.localize @mission.created_at, format: :date_month_year_concise%></p>
       </div>

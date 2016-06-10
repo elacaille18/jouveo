@@ -29,7 +29,10 @@ a {
 
 .btn-link {
   color: rgb(238, 95, 91);
-  &:hover {
+  &:hover, &:focus {
     color: #E62117;
+  }
+  &:focus {
+    outline: none;
   }
 }
