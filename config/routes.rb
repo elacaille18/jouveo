@@ -2,8 +2,16 @@ Rails.application.routes.draw do
 
   # Locales for languages
   scope '(:locale)', locale: /fr|en/ do
+    # Home page
     root to: 'pages#home'
+
+    # Profile page
+    get 'profile' => 'users#profile'
+
+    # Users routes
     devise_for :users
+
+    # Models routes
     resources :missions, only: [:index, :new, :create, :edit, :update, :show] do
       resources :candidates, only: [:new, :create, :edit, :update, :destroy]
     end
