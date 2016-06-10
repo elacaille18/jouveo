@@ -27,6 +27,7 @@ class MissionsController < ApplicationController
 
   def edit
     # mission is set in private
+    @team_jouve = User.team_jouve
     authorize @mission
   end
 

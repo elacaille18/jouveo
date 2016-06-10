@@ -1,7 +1,7 @@
 class MissionPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(user: user)
+      scope.where("user_id = ? or associate_id = ? or consultant_id = ? or assistant_id = ?", user, user, user, user)
     end
   end
 
