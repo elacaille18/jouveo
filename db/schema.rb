@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610140242) do
+ActiveRecord::Schema.define(version: 20160610141434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160610140242) do
     t.string   "status",                default: "contact_in_progress"
     t.string   "compensation_variable"
     t.string   "compensation_others"
+    t.string   "photo"
   end
 
   add_index "candidates", ["mission_id"], name: "index_candidates_on_mission_id", using: :btree
