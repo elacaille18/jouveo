@@ -32,7 +32,9 @@
         <h4><%=pluralize(@mission.candidates.size, t(".candidate"))%></h4>
       </div>
       <p>
-        <%= link_to I18n.t(".missions.add_candidate"), new_mission_candidate_path(@mission) %>
+        <%= link_to new_mission_candidate_path(@mission) do %>
+          <i class="fa fa-plus" aria-hidden="true"></i> <%= I18n.t(".missions.add_candidate")%>
+        <%end%>
       </p>
     </div>
 
