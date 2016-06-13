@@ -12,6 +12,7 @@ class MissionsController < ApplicationController
     @mission = Mission.new()
     @mission.users.build
     @team_jouve = User.team_jouve
+    @not_jouve = User.not_jouve
     authorize @mission
   end
 
@@ -22,7 +23,7 @@ class MissionsController < ApplicationController
     @alloweds = params[:mission][:user_ids].delete_if { |id| id==""}.map(&:to_i)
     @alloweds.each do |allowed|
       allowed_user = User.find(allowed)
-      @mission.users << allowed_user @mission.users.include?(allowed_user)
+      @mission.users << allowed_user unless @mission.users.include?(allowed_user)
     end
 
     authorize @mission

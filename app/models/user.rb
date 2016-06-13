@@ -15,6 +15,11 @@ class User < ActiveRecord::Base
     # .map { |member| "#{member.first_name} #{member.last_name}"}
   end
 
+  def self.not_jouve
+    User.where("jouve = ?", false)
+    # .map { |member| "#{member.first_name} #{member.last_name}"}
+  end
+
   def full_name
     "#{self.first_name} #{self.last_name}"
   end

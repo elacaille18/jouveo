@@ -10,7 +10,7 @@
 
     <div id="form-mission-clients">
       <div class="client-field">
-      <%= f.association :users, label_method: :email, value_method: :id, multiple: true%>
+      <%= f.association :users, collection: not_jouve, label_method: :email, value_method: :id, multiple: true%>
 
       </div>
       <a href="#">Add a client</a>
