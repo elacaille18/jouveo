@@ -7,16 +7,8 @@ class User < ActiveRecord::Base
   # Uploads
   mount_uploader :photo, PhotoUploader
 
-  # Associations
-  has_and_belongs_to_many :missions
-
   def self.team_jouve
     User.where("jouve = ?", true)
-    # .map { |member| "#{member.first_name} #{member.last_name}"}
-  end
-
-  def self.not_jouve
-    User.where("jouve = ?", false)
     # .map { |member| "#{member.first_name} #{member.last_name}"}
   end
 
