@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get 'profile/edit', to: 'users#edit'
 
     # Users routes
-    devise_for :users
+    devise_for :users, :controllers => { registrations: 'registrations' }
 
     # Models routes
     resources :missions, only: [:index, :new, :create, :edit, :update, :show] do

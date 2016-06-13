@@ -1,6 +1,7 @@
 class Candidate < ActiveRecord::Base
   # Uploads
   mount_uploader :resume, ResumeUploader
+  mount_uploader :photo, PhotoUploader
 
   # Associations
   belongs_to :mission

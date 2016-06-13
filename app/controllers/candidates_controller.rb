@@ -55,7 +55,7 @@ class CandidatesController < ApplicationController
   end
 
   def candidate_params
-    params.require(:candidate).permit(:first_name, :last_name, :resume, :resume_cache, :compensation)
+    params.require(:candidate).permit(:first_name, :last_name, :resume, :resume_cache, :photo, :photo_cache, :compensation)
   end
 
 end

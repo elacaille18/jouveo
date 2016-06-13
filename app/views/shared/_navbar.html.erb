@@ -30,8 +30,17 @@
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= current_user.first_name %>
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+          <div class="dropdown_user", id="navbar-wagon-menu", data-toggle="dropdown", data-hover="dropdown", data-delay="100" >
+            <span><%= current_user.first_name %></span>
+            <span>
+              <%if current_user.photo.url %>
+                <%= cl_image_tag current_user.photo, width: 35, height: 35, gravity:"face", radius:"max", crop:"fill", class: "img-round" %>
+              <%else%>
+                <%= image_tag "http://www.fao.org/fileadmin/templates/aiq2013/images/user-placeholder.jpg", class:"avatar"%>
+              <%end%>
+            </span>
+          </div>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to profile_path do %>
