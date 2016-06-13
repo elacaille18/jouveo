@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610141434) do
+ActiveRecord::Schema.define(version: 20160613133953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20160610141434) do
 
   create_table "missions", force: :cascade do |t|
     t.string   "title"
-    t.integer  "user_id"
+    t.integer  "creator_id"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
     t.string   "status",        default: "in_progress"
@@ -78,7 +78,16 @@ ActiveRecord::Schema.define(version: 20160610141434) do
   add_index "missions", ["associate_id"], name: "index_missions_on_associate_id", using: :btree
   add_index "missions", ["company_id"], name: "index_missions_on_company_id", using: :btree
   add_index "missions", ["consultant_id"], name: "index_missions_on_consultant_id", using: :btree
-  add_index "missions", ["user_id"], name: "index_missions_on_user_id", using: :btree
+  add_index "missions", ["creator_id"], name: "index_missions_on_creator_id", using: :btree
+
+  create_table "missions_users", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "mission_id"
+  end
+
+  add_index "missions_users", ["mission_id", "user_id"], name: "by_mission_and_user", unique: true, using: :btree
+  add_index "missions_users", ["mission_id"], name: "index_missions_users_on_mission_id", using: :btree
+  add_index "missions_users", ["user_id"], name: "index_missions_users_on_user_id", using: :btree
 
   create_table "schools", force: :cascade do |t|
     t.string   "name"
@@ -109,14 +118,22 @@ ActiveRecord::Schema.define(version: 20160610141434) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "users_missions", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "mission_id"
+  end
+
+  add_index "users_missions", ["mission_id"], name: "index_users_missions_on_mission_id", using: :btree
+  add_index "users_missions", ["user_id"], name: "index_users_missions_on_user_id", using: :btree
+
   add_foreign_key "candidates", "missions"
   add_foreign_key "contracts", "candidates"
   add_foreign_key "contracts", "companies"
   add_foreign_key "diplomas", "candidates"
   add_foreign_key "diplomas", "schools"
   add_foreign_key "missions", "companies"
-  add_foreign_key "missions", "users"
   add_foreign_key "missions", "users", column: "assistant_id"
   add_foreign_key "missions", "users", column: "associate_id"
   add_foreign_key "missions", "users", column: "consultant_id"
+  add_foreign_key "missions", "users", column: "creator_id"
 end
