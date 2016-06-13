@@ -46,6 +46,7 @@ class MissionsController < ApplicationController
 
   def update
     @mission.update(mission_params)
+    # Pas besoin de redemander l'update des associations
     authorize @mission
     if @mission.save
       redirect_to mission_path(@mission)
