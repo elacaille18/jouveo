@@ -21,7 +21,8 @@ class MissionsController < ApplicationController
     # je regarde qui a la droit d'accès hors jouve
     @alloweds = params[:mission][:user_ids].delete_if { |id| id==""}.map(&:to_i)
     @alloweds.each do |allowed|
-      @mission.users << User.find(allowed)
+      allowed_user = User.find(allowed)
+      @mission.users << allowed_user @mission.users.include?(allowed_user)
     end
 
     authorize @mission
