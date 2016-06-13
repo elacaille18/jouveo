@@ -14,7 +14,7 @@ $(document).ready(function(){
     $($(this).data("target")).removeClass('hidden');
   });
 
-
+  console.log("ok execution");
   $('.chzn-select').chosen();
 });
 
