@@ -32,6 +32,11 @@ gem 'faker'
 gem 'cloudinary'
 gem 'carrierwave'
 
+# Select customs
+gem 'chosen-rails'
+gem 'bootstrap-chosen-rails'
+
+
 
 group :development, :test do
   gem 'binding_of_caller'
