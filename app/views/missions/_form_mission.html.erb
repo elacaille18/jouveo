@@ -8,6 +8,14 @@
     <%= f.association :consultant, collection: team_jouve, label_method: :full_name, value_method: :id %>
     <%= f.association :assistant, collection: team_jouve, label_method: :full_name, value_method: :id  %>
 
+    <div id="form-mission-clients">
+      <div class="client-field">
+      <%= f.association :users, label_method: :email, value_method: :id, multiple: true%>
+
+      </div>
+      <a href="#">Add a client</a>
+    </div>
+
     <div class="text-center">
       <%= f.button :submit, class:'btn navbar-wagon-button'%>
     </div>

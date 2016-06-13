@@ -1,7 +1,7 @@
 class MissionPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where("user_id = ? or associate_id = ? or consultant_id = ? or assistant_id = ?", user, user, user, user)
+      scope.where("creator_id = ? or associate_id = ? or consultant_id = ? or assistant_id = ?", user, user, user, user)
     end
   end
 
@@ -47,10 +47,10 @@ class MissionPolicy < ApplicationPolicy
   private
 
   def user_is_part_of_mission?
-    record.user == user || record.associate == user || record.consultant == user || record.assistant == user
+    record.creator == user || record.associate == user || record.consultant == user || record.assistant == user
   end
   def user_is_owner_or_admin?
-    user.admin || record.user == user
+    user.admin || record.creator == user
   end
 
   def user_is_admin
