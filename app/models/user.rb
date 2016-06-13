@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   # Associations
   has_and_belongs_to_many :missions
+  belongs_to :company
 
   def self.team_jouve
     User.where("jouve = ?", true)
