@@ -13,6 +13,7 @@ class MissionsController < ApplicationController
     @mission.users.build
     @team_jouve = User.team_jouve
     @not_jouve = User.not_jouve
+    raise
     authorize @mission
   end
 
@@ -39,6 +40,7 @@ class MissionsController < ApplicationController
   def edit
     # mission is set in private
     @team_jouve = User.team_jouve
+    @not_jouve = User.not_jouve
     authorize @mission
   end
 
