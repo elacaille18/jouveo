@@ -2,11 +2,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :photo, label: "Photo", hint: "Montrer une photo de vous est un moyen important pour les utilisateurs de vous reconnaître. Téléchargez une photo qui montre clairement votre visage." %>
+    <%= f.input :first_name, required: true, autofocus: true%>
+    <%= f.input :last_name, required: true%>
+    <%= f.input :email, required: true %>
+    <%= f.input :photo, label: "Photo", hint: "Veuillez charger une photo s'il vous plait" %>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :description, hint: "Whiz est basé sur une relation de confiance entre utilisateurs. Dites-leurs en plus à propos de vous...", required: false %>
-    <%= f.input :city, label: "Ville", hint: "Où habitez-vous ?", required: false, placeholder: "ex: Paris, Lyon, Bordeaux..." %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -18,7 +18,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Modifier vos informations", class: "btn btn-primary" %>
+    <%= f.button :submit, "Modifier vos informations", class: "btn navbar-wagon-button" %>
   </div>
 <% end %>
 <br>

@@ -43,7 +43,11 @@
           <h4 class="text-center"><%= I18n.t(".missions.team")%></h4>
         <div class="associate">
           <div class="team-avatar text-center">
-            <%= image_tag "http://placehold.it/30x30", class: "avatar-very-large" %>
+            <%if @mission.associate.photo.url %>
+                <%= cl_image_tag @mission.associate.photo, width: 80, height: 80, gravity:"face", radius:"max", crop:"fill", class: "img-round" %>
+              <%else%>
+                <%= image_tag "http://www.fao.org/fileadmin/templates/aiq2013/images/user-placeholder.jpg", class:"avatar-very-large"%>
+              <%end%>
           </div>
           <div class="team-infos">
 
@@ -55,7 +59,11 @@
 
         <div class="consultant">
           <div class="team-avatar text-center">
-            <%= image_tag "http://placehold.it/30x30", class: "avatar-large" %>
+            <%if @mission.consultant.photo.url %>
+              <%= cl_image_tag @mission.consultant.photo, width: 50, height: 50, gravity:"face", radius:"max", crop:"fill", class: "img-round" %>
+            <%else%>
+              <%= image_tag "http://www.fao.org/fileadmin/templates/aiq2013/images/user-placeholder.jpg", class:"avatar-large"%>
+            <%end%>
           </div>
           <div class="team-infos">
 
@@ -67,7 +75,11 @@
 
         <div class="assistant">
           <div class="team-avatar text-center">
-            <%= image_tag "http://placehold.it/30x30", class: "avatar-large" %>
+            <%if @mission.assistant.photo.url %>
+              <%= cl_image_tag @mission.assistant.photo, width: 50, height: 50, gravity:"face", radius:"max", crop:"fill", class: "img-round" %>
+            <%else%>
+              <%= image_tag "http://www.fao.org/fileadmin/templates/aiq2013/images/user-placeholder.jpg", class:"avatar-large"%>
+            <%end%>
           </div>
           <div class="team-infos">
 

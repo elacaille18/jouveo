@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # Uploads
+  mount_uploader :photo, PhotoUploader
+
   def self.team_jouve
     User.where("jouve = ?", true)
     # .map { |member| "#{member.first_name} #{member.last_name}"}
@@ -11,5 +14,13 @@ class User < ActiveRecord::Base
 
   def full_name
     "#{self.first_name} #{self.last_name}"
+  end
+
+  def one_picture_url
+    if self.photo.url
+      self.photo.url
+    else
+      "http://www.fao.org/fileadmin/templates/aiq2013/images/user-placeholder.jpg"
+    end
   end
 end
