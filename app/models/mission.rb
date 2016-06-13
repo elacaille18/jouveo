@@ -1,6 +1,6 @@
 class Mission < ActiveRecord::Base
   # Associations
-  belongs_to :user
+  belongs_to :creator, class_name: "User"
   belongs_to :company
   has_many :candidates
 
