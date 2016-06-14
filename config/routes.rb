@@ -11,9 +11,10 @@ Rails.application.routes.draw do
 
     # Users routes
     devise_for :users, :controllers => { registrations: 'registrations' }
-
+    post 'add_client', to: 'users#new_client'
     # Models routes
     resources :missions, only: [:index, :new, :create, :edit, :update, :show] do
+
       resources :candidates, only: [:new, :create, :edit, :update, :destroy]
     end
   end
