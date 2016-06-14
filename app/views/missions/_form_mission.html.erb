@@ -1,16 +1,16 @@
 <div id="form-mission-content">
   <%= simple_form_for (mission) do |f|%>
-    <%= f.input :title%>
+    <%= f.input :title, label: I18n.t(".missions.show.title")%>
 
-    <%= f.association :company, label_method: :name, value_method: :id, include_blank: false%>
-    <%= f.input :status, collection: Mission::STATUS%>
-    <%= f.association :associate, collection: team_jouve, label_method: :full_name, value_method: :id %>
-    <%= f.association :consultant, collection: team_jouve, label_method: :full_name, value_method: :id %>
-    <%= f.association :assistant, collection: team_jouve, label_method: :full_name, value_method: :id  %>
+    <%= f.association :company, label: I18n.t(".missions.show.company"), label_method: :name, value_method: :id, include_blank: false%>
+    <%= f.input :status, label: I18n.t(".missions.show.status"), collection: Mission::STATUS%>
+    <%= f.association :associate, label: I18n.t(".missions.show.associate"), collection: team_jouve, label_method: :full_name, value_method: :id %>
+    <%= f.association :consultant, label: I18n.t(".missions.show.consultant"), collection: team_jouve, label_method: :full_name, value_method: :id %>
+    <%= f.association :assistant, label: I18n.t(".missions.show.assistant"), collection: team_jouve, label_method: :full_name, value_method: :id  %>
 
     <div id="form-mission-clients">
       <div class="client-field">
-      <%= f.association :users, collection: not_jouve,
+      <%= f.association :users, label: I18n.t(".missions.show.client"), collection: not_jouve,
                          label_method: :email, value_method: :id, multiple: true,
                          :input_html => {:class => "chzn-select form-control", :data => { :placeholder => 'Choose email for your clients' }}%>
 
@@ -18,7 +18,7 @@
 
       </div>
       <!-- Button trigger modal -->
-      <a href="#" type="button" class="btn btn-link" data-toggle="modal" data-target="#myClientModal">Add a client</a>
+      <a href="#" type="button" class="btn btn-link" data-toggle="modal" data-target="#myClientModal"><%= I18n.t(".missions.show.add_a_client")%></a>
     </div>
 
     <div class="text-center">
@@ -42,7 +42,7 @@
         <!-- autre test -->
         <%= form_for client, :url => add_client_path(mission_id: mission.id), remote: true do |f| %>
           <fieldset class="form-group">
-          <%= f.label :first_name %>:
+          <%= f.label :first_name, label: I18n.t(".users.first_name")%>:
           <%= f.text_field :first_name, class:"form-control" %>
           </fieldset>
           <fieldset class="form-group">
