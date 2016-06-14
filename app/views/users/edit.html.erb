@@ -1,5 +1,10 @@
 <div class="container padded">
+  <div class="text-center">
+    <h2><%= I18n.t(".users.edit_profile")%></h2>
+  </div>
   <div class="row">
-    <%= render "devise/registrations/edit_form_registration", user: current_user %>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+       <%= render "devise/registrations/edit_form_registration", user: current_user %>
+    </div>
   </div>
 </div>

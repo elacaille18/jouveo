@@ -7,7 +7,7 @@ fr:
   profile: "Mon profil"
   home-button: "Mes missions"
   welcome: "Bienvenue sur Jouveo"
-  tagline: "Superviser et gérer vos missions avec Jouve & Associés"
+  tagline: "Supervisez et gérez vos missions avec Jouve & Associés"
   close: "Fermer"
   create_mission: "Créer une mission"
   missions:
@@ -36,6 +36,8 @@ fr:
     client_interviewing: "Entretien client"
   users:
     edit_profile: "Modifier mon profil"
+    unhappy: "Mécontent ?"
+    delete_account: "Supprimer mon compte"
   time:
     formats:
       date_month_year_concise: '%d %B %Y'
