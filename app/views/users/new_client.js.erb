@@ -1,0 +1,10 @@
+<% if @client.errors.any? %>
+  // Show new modal with error messages
+  $('#modal-errors-messages').removeClass("hidden");
+  // A améliorer
+<% else %>
+  // Close the modal
+  $('#myClientModal').modal('hide');
+  // Add to select field
+  window.location.reload();
+<% end %>

@@ -12,4 +12,9 @@ class UserPolicy < ApplicationPolicy
   def edit?
     true
   end
+
+  def new_client?
+    true
+    #a modifier si nécessaire
+  end
 end
