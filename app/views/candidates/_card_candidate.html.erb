@@ -33,14 +33,16 @@
     <div class="col-xs-3">
       <div class="actions-jouve">
         <div class="action-admin text-right">
-          <p>
-            <%= link_to edit_mission_candidate_path(mission_id:candidate.mission, id: candidate.id ) do %>
-              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            <% end%>
-            <%= link_to mission_candidate_path(mission_id:candidate.mission, id: candidate.id), method: :delete, data: { confirm: "Etes-vous sure?" } do %>
-              <i class="fa fa-trash" aria-hidden="true"></i>
-            <%end%>
-          </p>
+          <%if current_user.jouve%>
+            <p>
+              <%= link_to edit_mission_candidate_path(mission_id:candidate.mission, id: candidate.id ) do %>
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <% end%>
+              <%= link_to mission_candidate_path(mission_id:candidate.mission, id: candidate.id), method: :delete, data: { confirm: "Etes-vous sure?" } do %>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              <%end%>
+            </p>
+          <%end%>
         </div>
         <div class="candidate-status">
           <% case candidate.status%>

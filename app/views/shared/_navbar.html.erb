@@ -18,7 +18,9 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
       <!-- Create mission -->
-      <%= link_to I18n.t(".create_mission"), new_mission_path, class: "navbar-wagon-item navbar-wagon-link navbar-button-creation" %>
+      <% if current_user.jouve %>
+        <%= link_to I18n.t(".create_mission"), new_mission_path, class: "navbar-wagon-item navbar-wagon-link navbar-button-creation" %>
+      <%end%>
       <!-- Notification -->
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
         <div class="badge-container">
