@@ -59,6 +59,7 @@ en:
     contact_in_progress: "Contact in progress"
     jouve_interviewing: "Jouve interview"
     client_interviewing: "Client interview"
+    next_meetings: "Your next meetings"
   users:
     first_name: "First name"
     last_name: "Last name"
