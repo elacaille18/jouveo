@@ -38,6 +38,7 @@ fr:
     contact_in_progress: "Contact en cours"
     jouve_interviewing: "Entretien Jouve"
     client_interviewing: "Entretien client"
+    next_meetings: "Vos prochains rendez-vous"
   users:
     first_name: "Prénom"
     last_name: "Nom"

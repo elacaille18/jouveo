@@ -5,7 +5,7 @@
         <%if current_user.photo.url %>
           <%= cl_image_tag current_user.photo, width:150, height:150, gravity:"face", crop:"fill", radius:20%>
         <%else%>
-          <%= image_tag "http://www.fao.org/fileadmin/templates/aiq2013/images/user-placeholder.jpg" , class:"avatar-square"%>
+          <%= image_tag "http://www.fao.org/fileadmin/templates/aiq2013/images/user-placeholder.jpg" , class:"avatar-square-large"%>
         <%end%>
       </div>
       <%= link_to I18n.t(".users.edit_profile"), profile_edit_path%>
