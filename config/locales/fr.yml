@@ -2,6 +2,9 @@ fr:
   hello: "Bonjour"
   sign_in: "Se connecter"
   sign_up: "S'inscrire"
+  sign_out: "Se déconnecter"
+  home: "Accueil"
+  profile: "Mon profil"
   home-button: "Mes missions"
   welcome: "Bienvenue sur Jouveo"
   tagline: "Superviser et gérer vos missions avec Jouve & Associés"
@@ -24,7 +27,7 @@ fr:
     cancelled: "Annulée"
     edit_mission: "Modifier la mission"
     add_candidate: "Ajouter un candidat"
-    team: "L'equipe J&A"
+    team: "L'équipe J&A"
   candidates:
     resume: "CV"
     status: "Statut"
