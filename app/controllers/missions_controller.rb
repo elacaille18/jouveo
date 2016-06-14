@@ -13,7 +13,6 @@ class MissionsController < ApplicationController
     @mission.users.build
     @team_jouve = User.team_jouve
     @not_jouve = User.not_jouve
-    raise
     authorize @mission
   end
 

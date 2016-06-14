@@ -3,4 +3,5 @@ class Company < ActiveRecord::Base
   has_many :contracts
   has_many :candidates, through: :contracts
   has_many :missions
+  has_many :users
 end
