@@ -1,4 +1,9 @@
 <div class="container padded">
+  <div>
+    <%= link_to missions_path do %>
+      <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to my missions
+    <%end%>
+  </div>
   <div class="row">
     <div class="col-xs-12 col-sm-8">
       <h3><%= @mission.title %></h3>
@@ -24,18 +29,25 @@
         </ul>
       </div>
 
-      <p>
-        <%= link_to I18n.t(".missions.edit_mission"), edit_mission_path(@mission) %>
-      </p>
+      <!-- Modifier la mission -->
+      <% if current_user.jouve %>
+        <p>
+          <%= link_to I18n.t(".missions.edit_mission"), edit_mission_path(@mission) %>
+        </p>
+      <%end%>
 
       <div id="candidates-count">
         <h4><%=pluralize(@mission.candidates.size, t(".candidate"))%></h4>
       </div>
+
+      <!-- Ajouter la mission -->
+      <% if current_user.jouve%>
       <p>
         <%= link_to new_mission_candidate_path(@mission) do %>
           <i class="fa fa-plus" aria-hidden="true"></i> <%= I18n.t(".missions.add_candidate")%>
         <%end%>
       </p>
+      <%end%>
     </div>
 
     <div class="col-xs-12 col-sm-4">
