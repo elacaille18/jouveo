@@ -2,9 +2,12 @@ fr:
   hello: "Bonjour"
   sign_in: "Se connecter"
   sign_up: "S'inscrire"
+  sign_out: "Se déconnecter"
+  home: "Accueil"
+  profile: "Mon profil"
   home-button: "Mes missions"
   welcome: "Bienvenue sur Jouveo"
-  tagline: "Superviser et gérer vos missions avec Jouve & Associés"
+  tagline: "Supervisez et gérez vos missions avec Jouve & Associés"
   close: "Fermer"
   create_mission: "Créer une mission"
   missions:
@@ -19,12 +22,16 @@ fr:
       associate: "Associé(e)"
       consultant: "Consultant(e)"
       assistant: "Assistant(e)"
+      title: "Titre"
+      company: "Société"
+      client: "Client(s)"
+      add_a_client: "Ajouter un nouveau client"
     in_progress: "En cours"
     closed: "Fermée"
     cancelled: "Annulée"
     edit_mission: "Modifier la mission"
     add_candidate: "Ajouter un candidat"
-    team: "L'equipe J&A"
+    team: "L'équipe J&A"
   candidates:
     resume: "CV"
     status: "Statut"
@@ -32,7 +39,11 @@ fr:
     jouve_interviewing: "Entretien Jouve"
     client_interviewing: "Entretien client"
   users:
+    first_name: "Prénom"
+    last_name: "Nom"
     edit_profile: "Modifier mon profil"
+    unhappy: "Mécontent ?"
+    delete_account: "Supprimer mon compte"
   time:
     formats:
       date_month_year_concise: '%d %B %Y'

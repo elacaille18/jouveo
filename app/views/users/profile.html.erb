@@ -1,10 +1,22 @@
 <div class="container padded">
   <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-      <%= image_tag "http://placehold.it/30x30", class: "avatar-very-large" %>
-      <%= @user.first_name%>
-      <%= @user.last_name %>
+    <div class="col-xs-4 col-sm-2 col-sm-offset-2">
+      <div id="profil-picture">
+        <%if current_user.photo.url %>
+          <%= cl_image_tag current_user.photo, width:150, height:150, gravity:"face", crop:"fill", radius:20%>
+        <%else%>
+          <%= image_tag "http://www.fao.org/fileadmin/templates/aiq2013/images/user-placeholder.jpg" , class:"avatar-square"%>
+        <%end%>
+      </div>
       <%= link_to I18n.t(".users.edit_profile"), profile_edit_path%>
+
+    </div>
+    <div class="col-xs-8 col-sm-6">
+      <h1>
+        <%= @user.first_name%> <%= @user.last_name %>
+      </h1>
+
+      <h4> <%= @user.email %></h4>
     </div>
   </div>
 </div>
