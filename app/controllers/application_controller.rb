@@ -26,4 +26,12 @@ class ApplicationController < ActionController::Base
    def default_url_options
     { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
   end
+
+  # Rails Admin
+  after_action :verify_authorized, except:  [:index], unless: :devise_or_pages_or_admin_controller?
+  after_action :verify_policy_scoped, only: :index, unless: :devise_or_pages_or_admin_controller?
+
+  def devise_or_pages_or_admin_controller?
+    devise_controller? || (self.kind_of? RailsAdmin::ApplicationController)
+  end
 end

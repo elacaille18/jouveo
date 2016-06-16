@@ -38,6 +38,7 @@ gem 'bootstrap-chosen-rails'
 
 # Admin interface
 gem 'rails_admin'
+#gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 
 group :development, :test do
   gem 'binding_of_caller'
