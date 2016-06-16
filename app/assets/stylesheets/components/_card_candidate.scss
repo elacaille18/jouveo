@@ -57,3 +57,17 @@
 .modal-body img {
   width: 100%;
 }
+
+.modal-body iframe {
+  width: 100%;
+  border-width: 0px;
+  height:70vh;
+  html {
+    overflow-y: scroll;
+  }
+
+}
+
+.modal-dialog {
+  transform: none;
+}
