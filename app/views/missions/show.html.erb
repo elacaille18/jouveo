@@ -57,9 +57,9 @@
           <div class="team-avatar text-center">
             <%if @mission.associate.photo.url %>
                 <%= cl_image_tag @mission.associate.photo, width: 80, height: 80, gravity:"face", radius:"max", crop:"fill", class: "img-round" %>
-              <%else%>
-                <%= image_tag "http://www.fao.org/fileadmin/templates/aiq2013/images/user-placeholder.jpg", class:"avatar-very-large"%>
-              <%end%>
+            <%else%>
+              <%= image_tag "http://www.fao.org/fileadmin/templates/aiq2013/images/user-placeholder.jpg", class:"avatar-very-large"%>
+            <%end%>
           </div>
           <div class="team-infos">
 

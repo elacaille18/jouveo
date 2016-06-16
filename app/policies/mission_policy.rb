@@ -2,7 +2,13 @@ class MissionPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       if user.jouve
-        scope.where("creator_id = ? or associate_id = ? or consultant_id = ? or assistant_id = ?", user, user, user, user)
+        if user.jouve_associate
+          # Membre associé
+          scope.all
+        else
+          #Membre non associé
+          scope.where("creator_id = ? or associate_id = ? or consultant_id = ? or assistant_id = ?", user, user, user, user)
+        end
       else
         scope.joins(:users).where(missions_users: { user_id: user.id })
       end
@@ -15,7 +21,8 @@ class MissionPolicy < ApplicationPolicy
   end
 
   def show?
-    user_is_part_of_mission?
+    # Peuvent voir ceux qui font partie de la mission ou ceux sont qui sont associés
+    user_is_part_of_mission? || user.jouve_associate
     #user_is_owner_or_admin?  A faire plus tard une fois que les admins seront crées
   end
 
@@ -24,7 +31,8 @@ class MissionPolicy < ApplicationPolicy
   end
 
   def create?
-      user_is_jouve# Anyone can create a trip
+      user_is_jouve
+      # Only Jouve member can create a mission
   end
 
   def edit
@@ -33,8 +41,7 @@ class MissionPolicy < ApplicationPolicy
 
 
   def update?
-    #record.user <=> @trip.user AND user <=> current_user dans les politiques
-    #user_is_owner_or_admin? # Only trip creator can update it and admin
+    # L'utilisateur fait partie de la mission mais doit aussi être membre de jouve
     user_is_part_of_mission? && user_is_jouve
   end
 

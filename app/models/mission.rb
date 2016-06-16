@@ -16,4 +16,7 @@ class Mission < ActiveRecord::Base
   validates :title, presence: true
   validates :company, presence: true
   validates :status, inclusion: {in: STATUS}
+  validates :associate, presence: true
+  validates :consultant, presence: true
+  validates :assistant, presence: true
 end
