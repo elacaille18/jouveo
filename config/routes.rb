@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # Locales for languages
   scope '(:locale)', locale: /fr|en/ do
     # Home page
