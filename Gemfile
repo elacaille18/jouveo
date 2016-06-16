@@ -36,7 +36,8 @@ gem 'carrierwave'
 gem 'chosen-rails'
 gem 'bootstrap-chosen-rails'
 
-
+# Admin interface
+gem 'rails_admin'
 
 group :development, :test do
   gem 'binding_of_caller'
