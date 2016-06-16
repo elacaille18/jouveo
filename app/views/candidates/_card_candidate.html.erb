@@ -94,7 +94,9 @@
         <h4 class="modal-title text-center" id="myModalLabel"><%= candidate.first_name%> <%= candidate.last_name.upcase%></h4>
       </div>
       <div class="modal-body">
-       <iframe src=<%= candidate.resume.url %>></iframe>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe src=<%= candidate.resume.url%>></iframe>
+        </div>
         <!-- # cl_image_tag candidate.resume, :format => :png -->
       </div>
       <div class="modal-footer">
@@ -105,5 +107,5 @@
   </div>
 </div>
 
-<script src="https://github.com/pipwerks/PDFObject/blob/master/pdfobject.min.js"></script>
+<!-- <script src="https://github.com/pipwerks/PDFObject/blob/master/pdfobject.min.js"></script> -->
 
