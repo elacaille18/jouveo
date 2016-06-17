@@ -39,6 +39,8 @@ fr:
     jouve_interviewing: "Entretien Jouve"
     client_interviewing: "Entretien client"
     next_meetings: "Vos prochains rendez-vous"
+  appointments:
+    edit_appointment: "Modifier le rendez-vous"
   users:
     first_name: "Prénom"
     last_name: "Nom"
@@ -50,7 +52,7 @@ fr:
       date_month_year_concise: '%d %B %Y'
       full_date_with_time: "<i class='fa fa-calendar-check-o' aria-hidden='true'></i>
 %d %B %Y | <i class='fa fa-clock-o' aria-hidden='true'></i>
- %H h %m"
+ %H h %M"
   date:
     order:
       - :day
