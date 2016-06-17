@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     # Models routes
     resources :missions, only: [:index, :new, :create, :edit, :update, :show] do
 
-      resources :candidates, only: [:new, :create, :edit, :update, :destroy]
+      resources :candidates, only: [:new, :create, :edit, :update, :destroy] do
+        resources :appointments, only: [:new, :create]
+      end
     end
   end
 

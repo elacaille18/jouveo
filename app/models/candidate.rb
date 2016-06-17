@@ -5,6 +5,7 @@ class Candidate < ActiveRecord::Base
 
   # Associations
   belongs_to :mission
+  has_many :appointments
   has_many :contracts
   has_many :companies, through: :contracts
   has_many :diplomas

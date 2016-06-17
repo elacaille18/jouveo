@@ -48,7 +48,15 @@ fr:
   time:
     formats:
       date_month_year_concise: '%d %B %Y'
+      full_date_with_time: "<i class='fa fa-calendar-check-o' aria-hidden='true'></i>
+%d %B %Y | <i class='fa fa-clock-o' aria-hidden='true'></i>
+ %H h %m"
   date:
+    order:
+      - :day
+      - :month
+      - :year
+
     month_names:
     -
     - janvier
