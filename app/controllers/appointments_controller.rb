@@ -53,6 +53,6 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:begins_at)
+    params.require(:appointment).permit(:begins_at, :interviewer_first_name, :interviewer_last_name, :interviewer_position)
   end
 end

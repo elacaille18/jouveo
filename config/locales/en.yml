@@ -40,7 +40,7 @@ en:
       created_at: "Created on"
       status: "Status"
       candidate: "candidate"
-      associate: "Associate"
+      associate: "Partner"
       consultant: "Consultant"
       assistant: "Assistant"
       title: "Title"
@@ -60,10 +60,13 @@ en:
     jouve_interviewing: "Jouve interview"
     client_interviewing: "Client interview"
   appointments:
+    no_appointments: "You do not have any appointments forecasted with this candidate."
     next_meetings:
-      zero: "No appointments forecasted"
       one: "Your next appointment"
       other: "Your next appointments"
+    past_meetings:
+      one: "Your past appointment"
+      other: "Your past appointments"
     edit_appointment: "Edit the appointment"
   users:
     first_name: "First name"

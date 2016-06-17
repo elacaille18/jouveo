@@ -5,7 +5,7 @@ class MissionsController < ApplicationController
   end
 
   def show
-    @appointment = Appointment.new
+    @appointment = Appointment.new()
     authorize @mission
   end
 

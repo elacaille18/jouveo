@@ -38,3 +38,10 @@
   margin-bottom: 20px;
 }
 
+
+.appointment-description {
+  hr {
+    width:50%;
+    border-bottom: 0.7px solid $gray-lighter;
+  }
+}
