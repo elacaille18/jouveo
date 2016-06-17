@@ -1,5 +1,10 @@
 <%= simple_form_for(appointment) do |f| %>
   <%= f.input :begins_at%>
-  <%= f.submit%>
+  <%= f.input :interviewer_first_name%>
+  <%= f.input :interviewer_last_name%>
+  <%= f.input :interviewer_position%>
+  <div class="text-center">
+  <%= f.button :submit, class:"btn navbar-wagon-button"%>
+  </div>
 <%end%>
 

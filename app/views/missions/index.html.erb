@@ -40,8 +40,8 @@
 <% content_for(:after_js) do %>
   <script>
 
-    $(document).on('ready', function() {
-
+    $(document).ready(function(){
+      // Effet sur cartes
       $( ".card-mission" ).hover(function() {
           $(".card-mission").addClass('fadded');
           $(this).removeClass('fadded');
@@ -49,6 +49,24 @@
           $(".card-mission").removeClass("fadded");
         }
       );
-    })
+
+
+      $(".tab").on("click", function(e){
+        // Change active tab
+        $(".active").removeClass('active');
+        $(this).addClass('active');
+        // Hide all tab-content (use class="hidden")
+        $(".tab-content").addClass('hidden');
+        // Show target tab-content (use class="hidden")
+        console.log($(this).data("target"));
+        $($(this).data("target")).removeClass('hidden');
+      });
+
+
+      $('.chzn-select').chosen();
+    });
+
+
+
   </script>
 <% end %>

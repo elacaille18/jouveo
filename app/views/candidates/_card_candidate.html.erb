@@ -114,6 +114,9 @@
         <!-- form ajout de rdv -->
         <%= simple_form_for([@mission, candidate, appointment]) do |f| %>
           <%= f.input :begins_at%>
+          <%= f.input :interviewer_first_name%>
+          <%= f.input :interviewer_last_name%>
+          <%= f.input :interviewer_position%>
       </div>
       <div class="modal-footer">
           <%= f.submit class:"btn btn-danger"%>

@@ -19,9 +19,9 @@ fr:
       created_at: "Créée le"
       status: "Statut"
       candidate: "candidat"
-      associate: "Associé(e)"
-      consultant: "Consultant(e)"
-      assistant: "Assistant(e)"
+      associate: "Associé"
+      consultant: "Consultant"
+      assistant: "Assistante"
       title: "Titre"
       company: "Société"
       client: "Client(s)"
@@ -39,10 +39,13 @@ fr:
     jouve_interviewing: "Entretien Jouve"
     client_interviewing: "Entretien client"
   appointments:
+    no_appointments: "Vous n'avez pas encore de rendez-vous prévu avec ce candidat."
     next_meetings:
-      zero: "Pas de rendez-vous prévus"
       one: "Votre prochain rendez-vous"
       other: "Vos prochains rendez-vous"
+    past_meetings:
+      one: "Votre dernier rendez-vous"
+      other: "Vos rendez-vous passés"
     edit_appointment: "Modifier le rendez-vous"
   users:
     first_name: "Prénom"

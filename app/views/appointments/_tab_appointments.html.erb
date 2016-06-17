@@ -1,20 +1,97 @@
-<h5><%= I18n.t ".appointments.next_meetings", count: candidate.appointments.size %> :</h5>
-  <%if candidate.appointments.empty? %>
-    <p>Vous n'avez pas encore de rendez-vous prévu avec ce candidat.</p>
-  <%else%>
-    <% candidate.appointments.order(:begins_at).each do |appointment|%>
-      <p><%= raw I18n.l(appointment.begins_at, format: :full_date_with_time)%>
-      <%= link_to edit_appointment_path(appointment) do%>
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+<div class="tab-appointments">
+  <div id="tabs-navigation">
+    <ul class="tabs list-inline" id="tabs-appointments">
+      <li class="tab active" data-target="#next_meetings_<%= candidate.id%>">
+        <div >
+          <p><%= I18n.t ".appointments.next_meetings", count: candidate.appointments.where("begins_at > ? ", Time.now).size %> :</p>
+        </div>
+      </li>
+      <% if candidate.appointments.where("begins_at < ? ", Time.now).any?%>
+        <li class="tab hidden-xs" data-target="#past_meetings_<%= candidate.id%>">
+          <div>
+            <p><%= I18n.t ".appointments.past_meetings", count: candidate.appointments.where("begins_at < ? ", Time.now).size %></p>
+          </div>
+        </li>
       <%end%>
-      <%= link_to mission_candidate_appointment_path(mission, candidate, appointment), method: :delete, data: { confirm: "Etes-vous sure?" } do %>
-        <i class="fa fa-trash" aria-hidden="true"></i>
+    </ul>
+  </div>
+
+  <div class="tab-content" id="next_meetings_<%= candidate.id%>">
+    <%if candidate.appointments.where("begins_at > ? ", Time.now).empty? %>
+      <p><%= I18n.t(".appointments.no_appointments")%></p>
+    <%else%>
+      <% candidate.appointments.where("begins_at > ? ", Time.now).order(:begins_at).each do |appointment|%>
+        <div class="appointment-description text-center">
+          <div class="appointment-timing">
+            <p><%= raw I18n.l(appointment.begins_at, format: :full_date_with_time)%>
+            <%= link_to edit_appointment_path(appointment) do%>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <%end%>
+            <%= link_to mission_candidate_appointment_path(mission, candidate, appointment), method: :delete, data: { confirm: "Etes-vous sure?" } do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            <%end%>
+          </div>
+          <div class="appointment-interviewer">
+            <p>
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <%= appointment.interviewer_full_name%> <br/>
+               <span style="font-style:italic;"><%= appointment.interviewer_position%></span>
+            </p>
+          </div>
+          <hr> <!-- To make a bottom border half the width -->
+        </div>
       <%end%>
+
+      </p>
+
     <%end%>
 
-    </p>
+  </div>
 
-  <%end%>
 
-  <!-- Ajouter une condition sur le statut du candidat -->
+  <div class="tab-content hidden" id="past_meetings_<%= candidate.id%>">
+      <% candidate.appointments.where("begins_at < ? ", Time.now).order(:begins_at).each do |appointment|%>
+        <div class="appointment-description text-center">
+          <div class="appointment-timing">
+            <p><%= raw I18n.l(appointment.begins_at, format: :full_date_with_time)%>
+            <%= link_to edit_appointment_path(appointment) do%>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <%end%>
+            <%= link_to mission_candidate_appointment_path(mission, candidate, appointment), method: :delete, data: { confirm: "Etes-vous sure?" } do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            <%end%>
+          </div>
+          <div class="appointment-interviewer">
+            <p>
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <%= appointment.interviewer_full_name%> <br/>
+               <span style="font-style:italic;"><%= appointment.interviewer_position%></span>
+            </p>
+          </div>
+          <hr> <!-- To make a bottom border half the width -->
+        </div>
+      <%end%>
+  </div>
 
+</div>
+
+<% content_for(:after_js) do %>
+<script>
+  $(document).ready(function(){
+    $(".tab").on("click", function(e){
+      // Change active tab
+      var parent = $(this).parent();
+      console.log(parent);
+
+      parent.find(".active").removeClass('active');
+      $(this).addClass('active');
+      // Hide all tab-content (use class="hidden")
+      $(".tab-content").addClass('hidden');
+      // Show target tab-content (use class="hidden")
+      //console.log($(this).data("target"));
+      $($(this).data("target")).removeClass('hidden');
+    });
+  });
+</script>
+
+<%end%>
