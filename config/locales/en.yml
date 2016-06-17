@@ -59,8 +59,11 @@ en:
     contact_in_progress: "Contact in progress"
     jouve_interviewing: "Jouve interview"
     client_interviewing: "Client interview"
-    next_meetings: "Your next meetings"
   appointments:
+    next_meetings:
+      zero: "No appointments forecasted"
+      one: "Your next appointment"
+      other: "Your next appointments"
     edit_appointment: "Edit the appointment"
   users:
     first_name: "First name"

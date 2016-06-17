@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     resources :missions, only: [:index, :new, :create, :edit, :update, :show] do
 
       resources :candidates, only: [:new, :create, :edit, :update, :destroy] do
-        resources :appointments, only: [:new, :create]
+        resources :appointments, only: [:new, :create, :destroy]
       end
     end
   end

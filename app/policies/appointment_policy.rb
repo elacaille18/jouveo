@@ -17,6 +17,10 @@ class AppointmentPolicy < ApplicationPolicy
     update?
   end
 
+  def destroy?
+    user_is_jouve
+  end
+
   private
 
   def user_is_jouve

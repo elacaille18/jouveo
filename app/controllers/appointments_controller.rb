@@ -1,6 +1,7 @@
 class AppointmentsController < ApplicationController
   before_action :find_mission, only: [:create]
-  before_action :set_candidate, only: [:create]
+  before_action :set_candidate, only: [:create, :destroy]
+  before_action :find_appointment, only: [:edit, :update, :destroy]
 
   def create
     @appointment = Appointment.new(appointment_params)
@@ -12,13 +13,13 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
-    @appointment = Appointment.find(params[:id])
+
     authorize @appointment
   end
 
 
   def update
-    @appointment = Appointment.find(params[:id])
+
     @appointment.update(appointment_params)
     authorize @appointment
     @mission = @appointment.candidate.mission
@@ -27,11 +28,21 @@ class AppointmentsController < ApplicationController
     else
       render :edit
     end
+  end
 
+  def destroy
+    @appointment.destroy
+
+    authorize @appointment
+    redirect_to mission_path(@candidate.mission)
   end
 
 
   private
+
+  def find_appointment
+    @appointment = Appointment.find(params[:id])
+  end
 
   def find_mission
     @mission = Mission.find(params[:mission_id])

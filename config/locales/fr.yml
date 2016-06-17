@@ -38,8 +38,11 @@ fr:
     contact_in_progress: "Contact en cours"
     jouve_interviewing: "Entretien Jouve"
     client_interviewing: "Entretien client"
-    next_meetings: "Vos prochains rendez-vous"
   appointments:
+    next_meetings:
+      zero: "Pas de rendez-vous prévus"
+      one: "Votre prochain rendez-vous"
+      other: "Vos prochains rendez-vous"
     edit_appointment: "Modifier le rendez-vous"
   users:
     first_name: "Prénom"
