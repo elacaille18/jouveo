@@ -64,22 +64,12 @@
     <div class="col-xs-10 col-xs-offset-1">
       <div class="collapse" id="collapse_<%=candidate.id%>">
           <div class="card card-block">
-            <h5><%= I18n.t (".candidates.next_meetings")%> :</h5>
-              <%if candidate.appointments.empty? %>
-                <p>Vous n'avez pas encore de rendez-vous prévu avec ce candidat.</p>
-              <%else%>
-                <p><%= raw I18n.l(candidate.appointments.last.begins_at, format: :full_date_with_time)%>
-                <%= link_to edit_appointment_path(candidate.appointments.last) do%>
-                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                <%end%>
-
-                </p>
-
-              <%end%>
+            <!-- Tab des rendez-vous -->
+            <%= render "appointments/tab_appointments", mission: @mission, candidate: candidate%>
 
               <!-- Ajouter une condition sur le statut du candidat -->
               <!-- Triger de modal sur le rdv -->
-              <button class="btn btn-link" data-toggle="modal" data-target="#myNewAppointmentModal">Add an appointment</button>
+              <button class="btn btn-link" data-toggle="modal" data-target="#myNewAppointmentModal_<%=candidate.id%>">Add an appointment</button>
           </div>
         </div>
     </div>
@@ -113,7 +103,7 @@
 
 
 <!-- Modal de new rdv -->
-<div class="modal fade" id="myNewAppointmentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myNewAppointmentModal_<%= candidate.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
