@@ -110,7 +110,7 @@
   <div class="container">
     <div class="candidates-list">
       <%@mission.candidates.each do |candidate| %>
-        <%= render "candidates/card_candidate", candidate: candidate %>
+        <%= render "candidates/card_candidate", candidate: candidate, appointment: @appointment %>
       <%end%>
     </div>
   </div>

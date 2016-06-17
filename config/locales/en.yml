@@ -60,6 +60,8 @@ en:
     jouve_interviewing: "Jouve interview"
     client_interviewing: "Client interview"
     next_meetings: "Your next meetings"
+  appointments:
+    edit_appointment: "Edit the appointment"
   users:
     first_name: "First name"
     last_name: "Last name"
@@ -69,3 +71,6 @@ en:
   time:
     formats:
       date_month_year_concise: '%B %d, %Y'
+      full_date_with_time: "<i class='fa fa-calendar-check-o' aria-hidden='true'></i>
+%B %d, %Y | <i class='fa fa-clock-o' aria-hidden='true'></i>
+ %H h %M"
