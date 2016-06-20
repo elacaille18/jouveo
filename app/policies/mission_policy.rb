@@ -31,7 +31,7 @@ class MissionPolicy < ApplicationPolicy
   end
 
   def create?
-      user_is_jouve
+      user_is_jouve?
       # Only Jouve member can create a mission
   end
 
@@ -42,12 +42,14 @@ class MissionPolicy < ApplicationPolicy
 
   def update?
     # L'utilisateur fait partie de la mission mais doit aussi être membre de jouve
-    user_is_part_of_mission? && user_is_jouve
+    user_is_part_of_mission? && user_is_jouve?
   end
 
   def destroy?
     user_is_owner_or_admin? # Only trip creator can update it or admin
   end
+
+
 
   private
 
@@ -62,7 +64,7 @@ class MissionPolicy < ApplicationPolicy
     user.admin
   end
 
-  def user_is_jouve
+  def user_is_jouve?
     user.jouve
   end
 end

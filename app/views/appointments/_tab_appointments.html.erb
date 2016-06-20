@@ -24,11 +24,13 @@
         <div class="appointment-description text-center">
           <div class="appointment-timing">
             <p><%= raw I18n.l(appointment.begins_at, format: :full_date_with_time)%>
-            <%= link_to edit_appointment_path(appointment) do%>
-              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            <%end%>
-            <%= link_to mission_candidate_appointment_path(mission, candidate, appointment), method: :delete, data: { confirm: "Etes-vous sure?" } do %>
-              <i class="fa fa-trash" aria-hidden="true"></i>
+            <% if current_user.jouve%>
+              <%= link_to edit_appointment_path(appointment) do%>
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <%end%>
+              <%= link_to mission_candidate_appointment_path(mission, candidate, appointment), method: :delete, data: { confirm: "Etes-vous sure?" } do %>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              <%end%>
             <%end%>
           </div>
           <div class="appointment-interviewer">
@@ -54,11 +56,13 @@
         <div class="appointment-description text-center">
           <div class="appointment-timing">
             <p><%= raw I18n.l(appointment.begins_at, format: :full_date_with_time)%>
-            <%= link_to edit_appointment_path(appointment) do%>
-              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            <%end%>
-            <%= link_to mission_candidate_appointment_path(mission, candidate, appointment), method: :delete, data: { confirm: "Etes-vous sure?" } do %>
-              <i class="fa fa-trash" aria-hidden="true"></i>
+            <% if current_user.jouve%>
+              <%= link_to edit_appointment_path(appointment) do%>
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <%end%>
+              <%= link_to mission_candidate_appointment_path(mission, candidate, appointment), method: :delete, data: { confirm: "Etes-vous sure?" } do %>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              <%end%>
             <%end%>
           </div>
           <div class="appointment-interviewer">

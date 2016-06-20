@@ -31,8 +31,10 @@ en:
   tagline: "Overview and manage your missions with Jouve & Associés"
   close: "Close"
   create_mission: "Create a mission"
+  create_candidate: "Create a candidate"
   missions:
     index:
+      back: "Back to my missions"
       title: "Your missions"
       current: "Current"
       history: "History"
@@ -54,12 +56,23 @@ en:
     add_candidate: "Add a candidate"
     team: "J&A team"
   candidates:
+    edit_candidate: "Edit the candidate"
+    first_name: "First name"
+    last_name: "Last name"
+    compensation_fix: "Fix compensation"
+    compensation_variable: "Variable compensation"
+    compensation_others: "Others compensations"
     resume: "Resume"
     status: "Status"
     contact_in_progress: "Contact in progress"
     jouve_interviewing: "Jouve interview"
     client_interviewing: "Client interview"
   appointments:
+    interviewer_first_name: "Interviewer first name"
+    interviewer_last_name: "Interviewer last name"
+    interviewer_position: "Interviewer position"
+    summary: "Appointments summary"
+    schedule: "Schedule"
     add_appointment: "Add an appointment"
     no_appointments: "You do not have any appointments forecasted with this candidate."
     next_meetings:
@@ -81,3 +94,4 @@ en:
       full_date_with_time: "<i class='fa fa-calendar-check-o' aria-hidden='true'></i>
 %B %d, %Y | <i class='fa fa-clock-o' aria-hidden='true'></i>
  %H h %M"
+      concise: "%d/%m/%Y at %H:%M"

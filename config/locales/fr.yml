@@ -10,8 +10,10 @@ fr:
   tagline: "Supervisez et gérez vos missions avec Jouve & Associés"
   close: "Fermer"
   create_mission: "Créer une mission"
+  create_candidate: "Créer un candidat"
   missions:
     index:
+      back: "Retour à mes missions"
       title: "Vos missions"
       current: "En cours"
       history: "Historique"
@@ -33,12 +35,23 @@ fr:
     add_candidate: "Ajouter un candidat"
     team: "L'équipe J&A"
   candidates:
+    edit_candidate: "Modifier le candidat"
+    first_name: "Prénom"
+    last_name: "Nom"
+    compensation_fix: "Compensation fixe"
+    compensation_variable: "Compensation variable"
+    compensation_others: "Autres compensations"
     resume: "CV"
     status: "Statut"
     contact_in_progress: "Contact en cours"
     jouve_interviewing: "Entretien Jouve"
     client_interviewing: "Entretien client"
   appointments:
+    interviewer_first_name: "Prénom de l'interviewer"
+    interviewer_last_name: "Nom de l'interviewer"
+    interviewer_position: "Poste de l'interviewer"
+    summary: "Récapitulatif des rendez-vous"
+    schedule: "Horaire"
     add_appointment: "Ajouter un rendez-vous"
     no_appointments: "Vous n'avez pas encore de rendez-vous prévu avec ce candidat."
     next_meetings:
@@ -60,6 +73,7 @@ fr:
       full_date_with_time: "<i class='fa fa-calendar-check-o' aria-hidden='true'></i>
 %d %B %Y | <i class='fa fa-clock-o' aria-hidden='true'></i>
  %H h %M"
+      concise: "%d/%m/%Y à %Hh%M"
   date:
     order:
       - :day

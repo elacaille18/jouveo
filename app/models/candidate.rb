@@ -17,5 +17,7 @@ class Candidate < ActiveRecord::Base
   validates :last_name, presence: true
   validates :status, inclusion: {in: STATUS}
 
-
+  def full_name
+    "#{self.first_name.capitalize} #{self.last_name.upcase}"
+  end
 end
