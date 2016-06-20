@@ -7,3 +7,4 @@
 //= require bootstrap-datetimepicker
 //= require pickers
 
+//= require moment/fr

@@ -21,13 +21,7 @@
       <% if current_user.jouve %>
         <%= link_to I18n.t(".create_mission"), new_mission_path, class: "navbar-wagon-item navbar-wagon-link navbar-button-creation" %>
       <%end%>
-      <!-- Notification -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-        <div class="badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-red">3</div>
-        </div>
-      <% end %>
+
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">

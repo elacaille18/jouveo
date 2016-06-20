@@ -60,6 +60,7 @@ en:
     jouve_interviewing: "Jouve interview"
     client_interviewing: "Client interview"
   appointments:
+    add_appointment: "Add an appointment"
     no_appointments: "You do not have any appointments forecasted with this candidate."
     next_meetings:
       one: "Your next appointment"

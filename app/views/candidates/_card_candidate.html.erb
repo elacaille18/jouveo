@@ -69,7 +69,9 @@
 
               <!-- Ajouter une condition sur le statut du candidat -->
               <!-- Triger de modal sur le rdv -->
-              <button class="btn btn-link" data-toggle="modal" data-target="#myNewAppointmentModal_<%=candidate.id%>">Add an appointment</button>
+              <button class="btn btn-link" data-toggle="modal" data-target="#myNewAppointmentModal_<%=candidate.id%>">
+                <%= I18n.t(".appointments.add_appointment")%>
+              </button>
           </div>
         </div>
     </div>

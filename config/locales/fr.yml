@@ -39,6 +39,7 @@ fr:
     jouve_interviewing: "Entretien Jouve"
     client_interviewing: "Entretien client"
   appointments:
+    add_appointment: "Ajouter un rendez-vous"
     no_appointments: "Vous n'avez pas encore de rendez-vous prévu avec ce candidat."
     next_meetings:
       one: "Votre prochain rendez-vous"
