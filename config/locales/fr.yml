@@ -10,8 +10,10 @@ fr:
   tagline: "Supervisez et gérez vos missions avec Jouve & Associés"
   close: "Fermer"
   create_mission: "Créer une mission"
+  create_candidate: "Créer un candidat"
   missions:
     index:
+      back: "Retour à mes missions"
       title: "Vos missions"
       current: "En cours"
       history: "Historique"
@@ -33,6 +35,7 @@ fr:
     add_candidate: "Ajouter un candidat"
     team: "L'équipe J&A"
   candidates:
+    edit_candidate: "Modifier le candidat"
     first_name: "Prénom"
     last_name: "Nom"
     compensation_fix: "Compensation fixe"

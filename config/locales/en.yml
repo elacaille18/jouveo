@@ -31,8 +31,10 @@ en:
   tagline: "Overview and manage your missions with Jouve & Associés"
   close: "Close"
   create_mission: "Create a mission"
+  create_candidate: "Create a candidate"
   missions:
     index:
+      back: "Back to my missions"
       title: "Your missions"
       current: "Current"
       history: "History"
@@ -54,6 +56,7 @@ en:
     add_candidate: "Add a candidate"
     team: "J&A team"
   candidates:
+    edit_candidate: "Edit the candidate"
     first_name: "First name"
     last_name: "Last name"
     compensation_fix: "Fix compensation"
