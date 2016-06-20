@@ -108,10 +108,62 @@
 
 <div class="wrapper-gray-light">
   <div class="container">
+
+    <!-- Button trigger modal -->
+    <div id="appointments-button" class="text-right">
+      <% if @mission.appointments.any?%>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#appointments-summary">
+          <%= I18n.t(".appointments.summary")%>
+        </button>
+      <%end%>
+    </div>
+
     <div class="candidates-list">
       <%@mission.candidates.each do |candidate| %>
         <%= render "candidates/card_candidate", candidate: candidate, appointment: @appointment %>
       <%end%>
+    </div>
+  </div>
+
+
+</div>
+<!-- Large modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="appointments-summary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="myModalLabel"><%= I18n.t(".appointments.summary")%></h4>
+      </div>
+      <div class="modal-body">
+        <div class="appointment-table-header">
+          <div class="row">
+            <div class="col-xs-4 text-center"> <h6><%= I18n.t(".appointments.schedule").capitalize%></h6> </div>
+            <div class="col-xs-4 text-center"><h6><%= I18n.t(".missions.show.candidate").capitalize%></h6></div>
+            <div class="col-xs-4 text-center"><h6>Interviewer</h6></div>
+          </div>
+        </div>
+          <% @mission.appointments.order(:begins_at).each do |appointment| %>
+            <div class="apppointment-details">
+              <div class="row">
+                <div class="col-xs-4 text-center">
+                  <%= raw I18n.l(appointment.begins_at, format: :concise)%>
+                </div>
+                <div class="col-xs-4 text-center">
+                  <%= appointment.candidate.full_name%>
+                </div>
+                <div class="col-xs-4 text-center">
+                  <%= appointment.interviewer_full_name%>
+                </div>
+              </div>
+            </div>
+          <%end%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= I18n.t(".close")%></button>
+      </div>
     </div>
   </div>
 </div>

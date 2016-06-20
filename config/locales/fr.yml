@@ -39,6 +39,8 @@ fr:
     jouve_interviewing: "Entretien Jouve"
     client_interviewing: "Entretien client"
   appointments:
+    summary: "Récapitulatif des rendez-vous"
+    schedule: "Horaire"
     add_appointment: "Ajouter un rendez-vous"
     no_appointments: "Vous n'avez pas encore de rendez-vous prévu avec ce candidat."
     next_meetings:
@@ -60,6 +62,7 @@ fr:
       full_date_with_time: "<i class='fa fa-calendar-check-o' aria-hidden='true'></i>
 %d %B %Y | <i class='fa fa-clock-o' aria-hidden='true'></i>
  %H h %M"
+      concise: "%d/%m/%Y à %Hh%M"
   date:
     order:
       - :day

@@ -57,7 +57,6 @@ class MissionsController < ApplicationController
     end
   end
 
-
   private
 
   def set_mission

@@ -60,6 +60,8 @@ en:
     jouve_interviewing: "Jouve interview"
     client_interviewing: "Client interview"
   appointments:
+    summary: "Appointments summary"
+    schedule: "Schedule"
     add_appointment: "Add an appointment"
     no_appointments: "You do not have any appointments forecasted with this candidate."
     next_meetings:
@@ -81,3 +83,4 @@ en:
       full_date_with_time: "<i class='fa fa-calendar-check-o' aria-hidden='true'></i>
 %B %d, %Y | <i class='fa fa-clock-o' aria-hidden='true'></i>
  %H h %M"
+      concise: "%d/%m/%Y at %H:%M"
