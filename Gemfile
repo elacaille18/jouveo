@@ -53,6 +53,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'spring'
 
+  gem "letter_opener"
 
 end
 
