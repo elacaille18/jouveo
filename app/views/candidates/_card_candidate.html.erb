@@ -113,7 +113,7 @@
       <div class="modal-body">
         <!-- form ajout de rdv -->
         <%= simple_form_for([@mission, candidate, appointment]) do |f| %>
-          <%= f.input :begins_at%>
+          <%= f.input :begins_at, as: :datetime_picker%>
           <%= f.input :interviewer_first_name%>
           <%= f.input :interviewer_last_name%>
           <%= f.input :interviewer_position%>
@@ -137,6 +137,9 @@
     $("#collapse_<%= candidate.id%>").on('hide.bs.collapse', function() {
       $(".drop_<%=candidate.id%>").addClass('fa-angle-down').removeClass('fa-angle-up');
     });
+
+
+
   });
 </script>
 
