@@ -25,7 +25,7 @@
         <%=link_to "#collapse_#{candidate.id}",
             data: {toggle:"collapse"},
             aria: {expanded: false, controls:"collapseExample"} do %>
-          <i class="fa fa-angle-down" aria-hidden="true"></i>
+          <i class="drop_<%= candidate.id%> fa fa-angle-down" aria-hidden="true"></i>
         <%end%>
       </div>
     </div>
@@ -128,7 +128,20 @@
 </div>
 
 
-<!-- Modal de Edit Rdv -->
+<% content_for(:after_js) do %>
+<script>
+  $(document).ready(function(){
+    $("#collapse_<%= candidate.id%>").on('shown.bs.collapse', function() {
+      $(".drop_<%=candidate.id%>").addClass('fa-angle-up').removeClass('fa-angle-down');
+    });
+    $("#collapse_<%= candidate.id%>").on('hide.bs.collapse', function() {
+      $(".drop_<%=candidate.id%>").addClass('fa-angle-down').removeClass('fa-angle-up');
+    });
+  });
+</script>
+
+<%end%>
+
 
 
 

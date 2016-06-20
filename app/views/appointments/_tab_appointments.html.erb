@@ -81,12 +81,19 @@
     $(".tab").on("click", function(e){
       // Change active tab
       var parent = $(this).parent();
-      console.log(parent);
 
       parent.find(".active").removeClass('active');
       $(this).addClass('active');
+      // Cacher seulement les contenus
+      var kids = parent.children();
+      var kidsLength = kids.length;
+      // parcourt les élements à cacher
+      for (var i = 0; i < kidsLength; i++) {
+          $($(kids[i]).data("target")).addClass('hidden');
+      }
+
       // Hide all tab-content (use class="hidden")
-      $(".tab-content").addClass('hidden');
+      //$(".tab-content").addClass('hidden');
       // Show target tab-content (use class="hidden")
       //console.log($(this).data("target"));
       $($(this).data("target")).removeClass('hidden');
