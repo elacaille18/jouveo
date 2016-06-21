@@ -2,7 +2,7 @@
   <%= simple_form_for ([mission, candidate]) do |f|%>
     <%= f.input :first_name, label: I18n.t(".candidates.first_name")%>
     <%= f.input :last_name, label: I18n.t(".candidates.last_name")%>
-    <%= f.input :status, label: I18n.t(".candidates.status"), collection: Candidate::STATUS%>
+    <%= f.input :status, label: I18n.t(".candidates.status"), collection: Candidate::STATUS, include_blank: false%>
     <%= f.input :compensation_fix, label: I18n.t(".candidates.compensation_fix")%>
     <%= f.input :compensation_variable, label: I18n.t(".candidates.compensation_variable")%>
     <%= f.input :compensation_others, label: I18n.t(".candidates.compensation_others")%>
