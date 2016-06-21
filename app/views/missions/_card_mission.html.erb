@@ -7,6 +7,14 @@
     <p><%= I18n.t('.missions.show.created_at') %> : <%= I18n.localize mission.created_at, format: :date_month_year_concise%></p>
   </div>
   <div class="mission-status">
-    <%= I18n.t('.missions.show.status')%> : <!-- Rajouter le status dans la DB -->
+    <%= I18n.t('.missions.show.status')%> :
+    <% case mission.status%>
+      <% when "in_progress"%>
+        <%= I18n.t(".missions.in_progress") %>
+      <% when "closed"%>
+         <%= I18n.t(".missions.closed") %>
+      <% when "cancelled"%>
+         <%= I18n.t(".missions.cancelled") %>
+    <%end%><!-- Rajouter le status dans la DB -->
   </div>
 </div>

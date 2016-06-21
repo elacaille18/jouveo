@@ -64,6 +64,12 @@ fr:
   users:
     first_name: "Prénom"
     last_name: "Nom"
+    ask_photo: "Veuillez charger une photo s'il vous plait"
+    new_password: "Votre nouveau mot de passe"
+    new_password_beg: "Ne pas remplir si vous ne souhaitez pas changer votre mot de passe"
+    confirm_password: "Confirmez votre nouveau mot de passe"
+    current_password: "Votre mot de passe actuel"
+    current_password_required: "Pour confirmer vos changements, inscrivez votre mot de passe actuel"
     edit_profile: "Modifier mon profil"
     unhappy: "Mécontent ?"
     delete_account: "Supprimer mon compte"
