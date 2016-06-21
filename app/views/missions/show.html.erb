@@ -32,7 +32,9 @@
       <!-- Modifier la mission -->
       <% if current_user.jouve %>
         <p>
-          <%= link_to I18n.t(".missions.edit_mission"), edit_mission_path(@mission) %>
+          <%= link_to edit_mission_path(@mission) do %>
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> <%= I18n.t(".missions.edit_mission")%>
+          <%end%>
         </p>
       <%end%>
 

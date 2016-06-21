@@ -95,3 +95,6 @@ en:
 %B %d, %Y | <i class='fa fa-clock-o' aria-hidden='true'></i>
  %H h %M"
       concise: "%d/%m/%Y at %H:%M"
+  user_mailer:
+    welcome:
+      subject: "Your login to Jouveo - Jouve & Associés"

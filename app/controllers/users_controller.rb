@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @client.password =  generated_password
     authorize @client
     if @client.save
+      UserMailer.welcome(@client, generated_password).deliver_now
       respond_to do |format|
         format.html { redirect_to new_mission_path }
         format.js  # <-- will render `app/views/reviews/create.js.erb`
