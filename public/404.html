@@ -4,15 +4,51 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+  @import url(http://fonts.googleapis.com/css?family=opensans:500);
   body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
     text-align: center;
-    font-family: arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
   }
 
-  div.dialog {
+  .cover {
+    color: white;
+    text-align: center;
+    height: 100vh;
+    /* if you have a 70px navbar => height: calc(100vh - 70px); */
+    background-size: cover !important;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .head h1 {
+    font-size: 7em;
+    margin-bottom: 0.3em;
+  }
+
+  .btn-back {
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: #EE5F5B;
+    border-color: #ec4844;
+    transition: background 0.3s ease;
+  }
+  .btn-back:hover {
+    opacity: 1;
+    background: #3ac162;
+    text-decoration: none;
+    color: white;
+  }
+
+  .button {
+    margin-top: 70px;
+  }
+
+  /*div.dialog {
     width: 95%;
     max-width: 33em;
     margin: 4em auto 0;
@@ -50,18 +86,23 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  }*/
   </style>
 </head>
 
 <body>
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+  <div class="cover" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://res.cloudinary.com/jouve/image/upload/v1466510302/page_xj0ku4.jpg');">
+  <div class="cover-content">
+    <div class="head">
+      <h1>404</h1>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <h1>Page not found</h1>
+    <p>Sorry but the page you are trying to view doesn't exist.</p>
+    <div class="button">
+      <a href='/' class="btn-back">Go back to our home page</a>
+    </div>
   </div>
+</div>
 </body>
 </html>
