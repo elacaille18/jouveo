@@ -46,6 +46,7 @@ en:
     contact_in_progress: "Contact in progress"
     jouve_interviewing: "Jouve interview"
     client_interviewing: "Client interview"
+    rejected: "Rejected"
   appointments:
     interviewer_first_name: "Interviewer first name"
     interviewer_last_name: "Interviewer last name"
