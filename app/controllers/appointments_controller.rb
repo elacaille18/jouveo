@@ -6,6 +6,7 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     @appointment.candidate = @candidate
+    @candidate.update(status:"client_interviewing") # A modifier si on ne veut pas l'automatisation du status
     authorize @appointment
     if @appointment.save
       redirect_to mission_path(@mission)

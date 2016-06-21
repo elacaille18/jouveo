@@ -2,23 +2,23 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :first_name, required: true, autofocus: true%>
-    <%= f.input :last_name, required: true%>
+    <%= f.input :first_name, label: I18n.t(".users.first_name") , required: true, autofocus: true%>
+    <%= f.input :last_name, label: I18n.t(".users.last_name"), required: true%>
     <%= f.input :email, required: true %>
-    <%= f.input :photo, label: "Photo", hint: "Veuillez charger une photo s'il vous plait" %>
+    <%= f.input :photo, label: "Photo", hint: I18n.t(".users.ask_photo") %>
     <%= f.input :photo_cache, as: :hidden %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :password, label: "Votre nouveau mot de passe",autocomplete: "off", hint: "Ne pas remplir si vous ne souhaitez pas changer votre mot de passe", required: false %>
-    <%= f.input :password_confirmation,label: "Confirmez votre nouveau mot de passe", required: false %>
-    <%= f.input :current_password, label: "Votre mot de passe actuel", hint: "Pour confirmer vos changements, inscrivez votre mot de passe actuel", required: true %>
+    <%= f.input :password, label: I18n.t(".users.new_password"), autocomplete: "off", hint: I18n.t(".users.new_password_beg"), required: false %>
+    <%= f.input :password_confirmation,label: I18n.t(".users.confirm_password"), required: false %>
+    <%= f.input :current_password, label: I18n.t(".users.current_password"), hint: I18n.t(".users.current_password_required"), required: true %>
   </div>
 
   <div class="form-actions text-center">
-    <%= f.button :submit, "Modifier vos informations", class: "btn navbar-wagon-button" %>
+    <%= f.button :submit, I18n.t(".users.edit_profile"), class: "btn navbar-wagon-button" %>
   </div>
 <% end %>
 <br>

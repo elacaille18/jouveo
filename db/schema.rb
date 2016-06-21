@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160617135355) do
+ActiveRecord::Schema.define(version: 20160621153614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 20160617135355) do
     t.string   "last_name"
     t.string   "resume"
     t.string   "compensation_fix"
-    t.datetime "created_at",                                            null: false
-    t.datetime "updated_at",                                            null: false
-    t.string   "status",                default: "contact_in_progress"
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.string   "status",                default: "jouve_interviewing"
     t.string   "compensation_variable"
     t.string   "compensation_others"
     t.string   "photo"

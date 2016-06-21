@@ -1,6 +1,46 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
 en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              blank: "Please specifiy your current password to confirm your changes"
+            email:
+              blank: "Please Specify an Email id"
+              taken: "Please use a different Email id"
+              invalid: "Please Specify a valid Email id"
+            password:
+              blank: "Please Specify a Password"
+              confirmation: "Password does not match"
+            password_confirmation:
+              blank: "Please Specify a Password Confirmation"
+              confirmation: "There is a mismatch in your new password request"
+            first_name:
+              blank: "Please Specify First Name"
+            last_name:
+              blank: "Please Specify Last Name"
+        pdf:
+          attributes:
+            name:
+              blank: "Please Specify name to PDF"
+              taken: "Please use different name for PDF"
+            attachment:
+              blank: "Please Upload a PDF Attachment"
+        data_element:
+          attributes:
+            name:
+              blank: "Please give Element a desired name"
+              taken: "Already Created Element with given name"
+            color:
+              blank: "Please assign a color to Element"
+        template:
+          attributes:
+            name:
+              blank: "Please Specify a Name"
+              taken: "Please use a different name"
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
