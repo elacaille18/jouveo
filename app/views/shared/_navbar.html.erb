@@ -69,12 +69,12 @@
 
       <% if I18n.locale == I18n.default_locale %>
         <%= link_to :locale=>'en' do %>
-          <%= image_tag "uk.png"%>
+          <%= cl_image_tag "uk_l0v8tp.png"%>
         <%end%>
 
       <% else %>
         <%= link_to :locale=>'fr' do %>
-          <%= image_tag "fr.png"%>
+          <%= cl_image_tag "fr_esyuib.png"%>
         <%end%>
 
       <%end%>
@@ -98,12 +98,12 @@
           <li>
             <% if I18n.locale == I18n.default_locale %>
               <%= link_to :locale=>'en' do %>
-                <%= image_tag "uk.png" , style:"width:30px;" %>
+                <%= cl_image_tag "uk_l0v8tp.png" , style:"width:30px;" %>
               <%end%>
 
             <% else %>
               <%= link_to :locale=>'fr' do %>
-                <%= image_tag "fr.png", style:"width:30px;"%>
+                <%= cl_image_tag "fr_esyuib.png", style:"width:30px;"%>
               <%end%>
 
             <%end%>
