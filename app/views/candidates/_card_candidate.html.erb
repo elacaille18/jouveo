@@ -94,9 +94,11 @@
         <h4 class="modal-title text-center" id="myModalLabel"><%= candidate.first_name%> <%= candidate.last_name.upcase%></h4>
       </div>
       <div class="modal-body">
-        <div class="embed-responsive embed-responsive-16by9">
+        <!-- <div class="embed-responsive embed-responsive-16by9"> -->
+        <div class="iframe-container" style="overflow:auto;-webkit-overflow-scrolling: touch;">
           <iframe src=<%= cloudinary_url(candidate.resume, secure: true) %>></iframe>
         </div>
+        <!-- </div> -->
         <!-- # cl_image_tag candidate.resume, :format => :png -->
       </div>
       <div class="modal-footer">
