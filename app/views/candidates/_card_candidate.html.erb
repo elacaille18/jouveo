@@ -95,7 +95,7 @@
       </div>
       <div class="modal-body">
         <div class="embed-responsive embed-responsive-16by9">
-          <iframe src=<%= candidate.resume.url%>></iframe>
+          <iframe src=<%= cloudinary_url(candidate.resume, secure: true) %>></iframe>
         </div>
         <!-- # cl_image_tag candidate.resume, :format => :png -->
       </div>
