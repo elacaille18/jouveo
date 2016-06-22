@@ -9,7 +9,7 @@
           <%= image_tag "http://www.fao.org/fileadmin/templates/aiq2013/images/user-placeholder.jpg", class:"avatar-very-large"%>
         <%end%>
       </div>
-      <div class="action-admin text-center hidden-sm hidden-lg ">
+      <div class="action-admin text-center hidden-sm hidden-md hidden-lg ">
         <%if current_user.jouve%>
           <p>
             <%= link_to edit_mission_candidate_path(mission_id:candidate.mission, id: candidate.id ) do %>
