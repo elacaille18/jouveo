@@ -77,7 +77,7 @@ fr:
   time:
     formats:
       date_month_year_concise: '%d %B %Y'
-      full_date_with_time: "<i class='fa fa-calendar-check-o' aria-hidden='true'></i>
+      full_date_with_time: "<i class='fa fa-calendar-check-o hidden-xs' aria-hidden='true'></i>
 %d %B %Y | <i class='fa fa-clock-o' aria-hidden='true'></i>
  %H h %M"
       concise: "%d/%m/%Y à %Hh%M"
