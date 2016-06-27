@@ -4,4 +4,7 @@ class Company < ActiveRecord::Base
   has_many :candidates, through: :contracts
   has_many :missions
   has_many :users
+
+  # Validations
+  validates :name, presence: true
 end

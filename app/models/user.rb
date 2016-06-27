@@ -21,6 +21,11 @@ class User < ActiveRecord::Base
     # .map { |member| "#{member.first_name} #{member.last_name}"}
   end
 
+  def self.partners
+    User.where("jouve_associate = ?", true)
+    # .map { |member| "#{member.first_name} #{member.last_name}"}
+  end
+
   def full_name
     "#{self.first_name} #{self.last_name}"
   end

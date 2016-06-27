@@ -27,6 +27,7 @@ fr:
       title: "Titre"
       company: "Société"
       client: "Client(s)"
+      choose_clients_mail: "Choisissez les emails de vos clients"
       add_a_client: "Ajouter un nouveau client"
     in_progress: "En cours"
     closed: "Fermée"
@@ -63,6 +64,7 @@ fr:
       other: "Vos rendez-vous passés"
     edit_appointment: "Modifier le rendez-vous"
   users:
+    error_on_duplicate: "Ce client est déjà existant ou vous avez dû faire une erreur dans son adresse email."
     first_name: "Prénom"
     last_name: "Nom"
     ask_photo: "Veuillez charger une photo s'il vous plait"
@@ -74,6 +76,9 @@ fr:
     edit_profile: "Modifier mon profil"
     unhappy: "Mécontent ?"
     delete_account: "Supprimer mon compte"
+    clients:
+      new: "Nouveau client"
+      create: "Créer ce client"
   time:
     formats:
       date_month_year_concise: '%d %B %Y'
@@ -248,3 +253,14 @@ fr:
           default_col_sep: ";"
           col_sep: "Séparateur de colonnes"
           col_sep_help: "Laisser vide pour utiliser la valeur par défaut recommandée pour votre système ('%{value}')"
+  helpers:
+    submit:
+      user:
+        create: "Créer %{model}"
+        update: "Enregistrer"
+      mission:
+        create: "Créer la %{model}"
+        update: "Enregistrer"
+      appointment:
+        create: "Créer le rendez-vous"
+        update: "Enregistrer"
