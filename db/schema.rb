@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621153614) do
+ActiveRecord::Schema.define(version: 20160627080709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,17 +63,6 @@ ActiveRecord::Schema.define(version: 20160621153614) do
   add_index "contracts", ["candidate_id"], name: "index_contracts_on_candidate_id", using: :btree
   add_index "contracts", ["company_id"], name: "index_contracts_on_company_id", using: :btree
 
-  create_table "diplomas", force: :cascade do |t|
-    t.integer  "school_id"
-    t.integer  "candidate_id"
-    t.integer  "year"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "diplomas", ["candidate_id"], name: "index_diplomas_on_candidate_id", using: :btree
-  add_index "diplomas", ["school_id"], name: "index_diplomas_on_school_id", using: :btree
-
   create_table "missions", force: :cascade do |t|
     t.string   "title"
     t.integer  "creator_id"
@@ -100,12 +89,6 @@ ActiveRecord::Schema.define(version: 20160621153614) do
   add_index "missions_users", ["mission_id", "user_id"], name: "by_mission_and_user", unique: true, using: :btree
   add_index "missions_users", ["mission_id"], name: "index_missions_users_on_mission_id", using: :btree
   add_index "missions_users", ["user_id"], name: "index_missions_users_on_user_id", using: :btree
-
-  create_table "schools", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -146,8 +129,6 @@ ActiveRecord::Schema.define(version: 20160621153614) do
   add_foreign_key "candidates", "missions"
   add_foreign_key "contracts", "candidates"
   add_foreign_key "contracts", "companies"
-  add_foreign_key "diplomas", "candidates"
-  add_foreign_key "diplomas", "schools"
   add_foreign_key "missions", "companies"
   add_foreign_key "missions", "users", column: "assistant_id"
   add_foreign_key "missions", "users", column: "associate_id"
