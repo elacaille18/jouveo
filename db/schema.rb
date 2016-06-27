@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627080709) do
+ActiveRecord::Schema.define(version: 20160627080902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,19 +49,6 @@ ActiveRecord::Schema.define(version: 20160627080709) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "contracts", force: :cascade do |t|
-    t.integer  "company_id"
-    t.integer  "candidate_id"
-    t.date     "starts_on"
-    t.date     "ends_on"
-    t.string   "position"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "contracts", ["candidate_id"], name: "index_contracts_on_candidate_id", using: :btree
-  add_index "contracts", ["company_id"], name: "index_contracts_on_company_id", using: :btree
 
   create_table "missions", force: :cascade do |t|
     t.string   "title"
@@ -127,8 +114,6 @@ ActiveRecord::Schema.define(version: 20160627080709) do
 
   add_foreign_key "appointments", "candidates"
   add_foreign_key "candidates", "missions"
-  add_foreign_key "contracts", "candidates"
-  add_foreign_key "contracts", "companies"
   add_foreign_key "missions", "companies"
   add_foreign_key "missions", "users", column: "assistant_id"
   add_foreign_key "missions", "users", column: "associate_id"
