@@ -38,9 +38,10 @@ class CandidatesController < ApplicationController
 
   def destroy
     # a voir si on detruit definitivement
-    # pour l'instant j'enlève seulement de la mission
-    @candidate.mission = nil
-    @candidate.save
+    @candidate.destroy
+    # # pour l'instant j'enlève seulement de la mission
+    # @candidate.mission = nil
+    # @candidate.save
     authorize @candidate
     redirect_to mission_path(@mission)
   end

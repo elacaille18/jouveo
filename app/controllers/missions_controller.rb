@@ -1,7 +1,10 @@
 class MissionsController < ApplicationController
   before_action :set_mission, only: [:show, :edit, :update]
+
   def index
     @missions = policy_scope(Mission).order(created_at: :desc)
+    @current_missions = @missions.select { |mission| mission.status == "in_progress"}
+    @past_missions = @missions.reject { |mission| mission.status == "in_progress"}
   end
 
   def show

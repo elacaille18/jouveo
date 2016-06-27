@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "contact@jouveo.com"
+  default from: "contact@jouve-associes.com"
   layout 'mailer'
 end

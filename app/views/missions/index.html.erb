@@ -8,11 +8,13 @@
             <p><%= t ".current" %></p>
           </div>
         </li>
+        <% if current_user.jouve%>
         <li class="tab" data-target="#history">
           <div>
             <p><%= t ".history" %></p>
           </div>
         </li>
+        <%end%>
       </ul>
     </div>
   </div>
@@ -20,7 +22,7 @@
 
   <div class="container">
     <div class="tab-content" id="current">
-      <% @missions.each do |mission|%>
+      <% @current_missions.each do |mission|%>
         <div class="row">
           <div class="col-xs-11">
             <%= render "missions/card_mission", mission: mission%>
@@ -28,11 +30,18 @@
         </div>
       <%end%>
     </div>
+    <% if current_user.jouve%>
     <div class="tab-content hidden" id="history">
      <!-- temporaire -->
-
+      <% @past_missions.each do |mission|%>
+        <div class="row">
+          <div class="col-xs-11">
+            <%= render "missions/card_mission", mission: mission%>
+          </div>
+        </div>
+      <%end%>
     </div>
-
+    <%end%>
   </div>
 </div>
 
