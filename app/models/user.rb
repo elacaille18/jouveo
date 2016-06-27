@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :missions
   belongs_to :company
 
+  # validations
+  validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
+
   def self.team_jouve
     User.where("jouve = ?", true)
     # .map { |member| "#{member.first_name} #{member.last_name}"}
@@ -18,6 +21,11 @@ class User < ActiveRecord::Base
 
   def self.not_jouve
     User.where("jouve = ?", false)
+    # .map { |member| "#{member.first_name} #{member.last_name}"}
+  end
+
+  def self.partners
+    User.where("jouve_associate = ?", true)
     # .map { |member| "#{member.first_name} #{member.last_name}"}
   end
 

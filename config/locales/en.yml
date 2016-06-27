@@ -27,6 +27,7 @@ en:
       title: "Title"
       company: "Company"
       client: "Client(s)"
+      choose_clients_mail: "Choose your clients' mail addresses "
       add_a_client: "Add a new client"
     in_progress: "In progress"
     closed: "Closed"
@@ -63,6 +64,7 @@ en:
       other: "Your past appointments"
     edit_appointment: "Edit the appointment"
   users:
+    error_on_duplicate: "Sorry this client might already exists or you mistype his mail address."
     first_name: "First name"
     last_name: "Last name"
     ask_photo: "Please upload a picture of you"
@@ -74,6 +76,9 @@ en:
     edit_profile: "Edit my profile"
     unhappy: "Unsatisfied ?"
     delete_account: "Delete my account"
+    clients:
+      new: "New client"
+      create: "Create this new client"
   time:
     formats:
       date_month_year_concise: '%B %d, %Y'
@@ -84,3 +89,8 @@ en:
   user_mailer:
     welcome:
       subject: "Your login to Jouveo - Jouve & Associés"
+  helpers:
+    submit:
+      user:
+        create: "Add %{model}"
+        update: "Save Changes"

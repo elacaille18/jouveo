@@ -14,6 +14,7 @@ class MissionsController < ApplicationController
     @mission.users.build
     @team_jouve = User.team_jouve
     @not_jouve = User.not_jouve
+    @partners = User.partners
     @client = User.new()
     authorize @mission
   end
@@ -42,6 +43,7 @@ class MissionsController < ApplicationController
     # mission is set in private
     @team_jouve = User.team_jouve
     @not_jouve = User.not_jouve
+    @partners = User.partners
     @client = User.new()
     authorize @mission
   end
