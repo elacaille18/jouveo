@@ -1,5 +1,6 @@
 en:
   hello: "Hello everyone"
+  dear: "Dear %{recipient},"
   sign_in: "Log in"
   sign_up: "Sign up"
   sign_out: "Log out"
