@@ -15,7 +15,7 @@ Devise.setup do |config|
   config.mailer_sender = 'contact-no-reply@jouve-associes.com'
 
   # Configure the class responsible to send e-mails.
-  # config.mailer = 'Devise::Mailer'
+  config.mailer = 'UserMailer'
 
 
   # Configure the parent class responsible to send e-mails.
