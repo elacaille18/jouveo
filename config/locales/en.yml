@@ -27,7 +27,7 @@ en:
       title: "Title"
       company: "Company"
       client: "Client(s)"
-      choose_clients_mail: "Choose your clients'mail adresses "
+      choose_clients_mail: "Choose your clients' mail addresses "
       add_a_client: "Add a new client"
     in_progress: "In progress"
     closed: "Closed"
