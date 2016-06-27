@@ -32,6 +32,9 @@ gem 'faker'
 gem 'cloudinary'
 gem 'carrierwave'
 
+# Mailer
+gem 'postmark-rails'
+
 # Select customs
 gem 'chosen-rails'
 gem 'bootstrap-chosen-rails'
