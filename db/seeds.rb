@@ -6,14 +6,28 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-require 'faker'
+# require 'faker'
 
-Mission.destroy_all
-# Creating 100 fake restaurants
-5.times do
-  mission = Mission.new({
-    title: Faker::Name.title,
-    user: User.find(1)
-      })
-  mission.save
+# Mission.destroy_all
+
+# 5.times do
+#   mission = Mission.new({
+#     title: Faker::Name.title,
+#     user: User.find(1)
+#       })
+#   mission.save
+# end
+
+require 'csv'
+
+#Company.destroy_all
+
+csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+filepath = '/Users/ericlacaille/Desktop/companies.csv'
+
+CSV.foreach(filepath, csv_options) do |row|
+  # Here, row is an array of columns
+  company_name = row[0]
+  company = Company.new({name: company_name})
+  company.save
 end

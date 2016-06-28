@@ -2,7 +2,7 @@
   <%= simple_form_for (mission) do |f|%>
     <%= f.input :title, label: I18n.t(".missions.show.title")%>
 
-    <%= f.association :company, label: I18n.t(".missions.show.company"), label_method: :name, value_method: :id, include_blank: false%>
+    <%= f.association :company, collection: Company.order(:name), label: I18n.t(".missions.show.company"), label_method: :name, value_method: :id, include_blank: false%>
     <%= f.input :status, label: I18n.t(".missions.show.status"), collection: Mission::STATUS%>
     <%= f.association :associate, label: I18n.t(".missions.show.associate"), collection: partners, label_method: :full_name, value_method: :id, include_blank: false %>
     <%= f.association :consultant, label: I18n.t(".missions.show.consultant"), collection: team_jouve, label_method: :full_name, value_method: :id, include_blank: false %>
