@@ -18,6 +18,7 @@ en:
       title: "Your missions"
       current: "Current"
       history: "History"
+      no-current-mission: "Sorry you don't have any missions at the moment."
     show:
       created_at: "Created on"
       status: "Status"
