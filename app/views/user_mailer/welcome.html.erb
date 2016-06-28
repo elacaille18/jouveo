@@ -1,14 +1,23 @@
 <p>Dear <%= @user.first_name%>,</p>
 
-<p>Jouve & Associés vous permet désormais de consulter vos missions sur sa plateforme Jouveo.
-Veuillez vous rendre sur le site: <a href="https://jouveo.herokuapp.com" alt="jouveo" target="_blank">www.jouveo.com</a>
+<p>Jouve & Associés allows you to have instant look at your current missions with its platform Jouveo.
+Please go on this website: <a href="https://jouveo.herokuapp.com" alt="jouveo" target="_blank">www.jouveo.com</a>
 </p>
 
-<p>Veuillez utiliser l'adresse email sur laquelle vous est parvenu cet email: <%= @user.email%> <br/>
+<!-- <p>Jouve & Associés vous permet désormais de consulter vos missions sur sa plateforme Jouveo.
+Veuillez vous rendre sur le site: <a href="https://jouveo.herokuapp.com" alt="jouveo" target="_blank">www.jouveo.com</a>
+</p>
+ -->
+<p>Please use the email address on which you received this message: <%= @user.email%> <br/>
+Your password is the following: <strong><%= @password %></strong> <br/>
+You will be able to modify it at your first login (go to your profile page and click on the "edit" link).
+</p>
+
+<!-- <p>Veuillez utiliser l'adresse email sur laquelle vous est parvenu cet email: <%= @user.email%> <br/>
 Votre mot de passe est le suivant: <strong><%= @password %></strong> <br/>
 Vous pourrez le changer à la première connexion.
 </p>
-
+ -->
 <p>
 
 Jouve & Associés <br/>
