@@ -42,7 +42,7 @@ class MissionPolicy < ApplicationPolicy
 
   def update?
     # L'utilisateur fait partie de la mission mais doit aussi être membre de jouve
-    user_is_part_of_mission? && user_is_jouve?
+    ( user_is_part_of_mission? || user.jouve_associate ) && user_is_jouve?
   end
 
   def destroy?
