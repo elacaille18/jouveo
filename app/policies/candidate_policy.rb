@@ -6,27 +6,41 @@ class CandidatePolicy < ApplicationPolicy
   end
 
   def new?
-    true
-    # a verifier
+    create?
   end
 
   def create?
-    true
-    # A verifier
+    user_is_jouve?
   end
 
   def edit?
-    true
-    # A verifier
+    update?
   end
 
   def update?
-    true
-    # A verifier
+    user_is_part_of_mission? || user.jouve_associate
   end
 
   def destroy?
     # user is admin
-    true
+    user_is_part_of_mission?
+  end
+
+  private
+
+  def user_is_part_of_mission?
+    record.mission.creator == user || record.mission.associate == user || record.mission.consultant == user || record.mission.assistant == user
+  end
+
+  def user_is_owner_or_admin?
+    user.admin || record.mission.creator == user
+  end
+
+  def user_is_admin
+    user.admin
+  end
+
+  def user_is_jouve?
+    user.jouve
   end
 end
