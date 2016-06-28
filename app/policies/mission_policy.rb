@@ -31,8 +31,8 @@ class MissionPolicy < ApplicationPolicy
   end
 
   def create?
-      user_is_jouve?
-      # Only Jouve member can create a mission
+    user_is_jouve?
+    # Only Jouve member can create a mission
   end
 
   def edit
@@ -56,6 +56,7 @@ class MissionPolicy < ApplicationPolicy
   def user_is_part_of_mission?
     record.creator == user || record.associate == user || record.consultant == user || record.assistant == user || record.users.include?(user)
   end
+
   def user_is_owner_or_admin?
     user.admin || record.creator == user
   end
@@ -67,4 +68,5 @@ class MissionPolicy < ApplicationPolicy
   def user_is_jouve?
     user.jouve
   end
+
 end
