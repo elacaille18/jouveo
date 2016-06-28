@@ -265,3 +265,6 @@ fr:
       appointment:
         create: "Créer le rendez-vous"
         update: "Enregistrer"
+      candidate:
+        create: "Créer le/la candidat(e)"
+        update: "Enregistrer"
