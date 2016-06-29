@@ -58,7 +58,7 @@
       <div class="team-jouve">
           <h4 class="text-center"><%= I18n.t(".missions.team")%></h4>
 
-        <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Contact" data-placement="bottom" data-content="<%= @mission.associate.email%>">
+        <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Contact" data-placement="left" data-content="<%= @mission.associate.email%>">
           <div class="associate">
             <div class="team-avatar text-center">
               <%if @mission.associate.photo.url %>
@@ -76,7 +76,7 @@
           </div>
         </a>
 
-        <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Contact" data-placement="bottom" data-content="<%= @mission.consultant.email%>">
+        <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Contact" data-placement="left" data-content="<%= @mission.consultant.email%>">
 
           <div class="consultant">
 
@@ -98,7 +98,7 @@
 
         </a>
 
-        <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Contact" data-placement="bottom" data-content="<%= @mission.assistant.email%>">
+        <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Contact" data-placement="left" data-content="<%= @mission.assistant.email%>">
           <div class="assistant">
             <div class="team-avatar text-center">
               <%if @mission.assistant.photo.url %>
@@ -188,6 +188,24 @@
 
 <% content_for(:after_js) do %>
   <script>
-    $("[data-toggle=popover]").popover();
+    // $("[data-toggle=popover]").popover();
+    $(".team-jouve a").popover({
+        trigger: 'focus',
+        placement: function(){
+            if ($(window).width() < 768) {
+                return 'bottom';
+            }
+            else if ($(window).width() >= 768 &&  $(window).width() <= 992) {
+                return 'left';
+            }
+            else if ($(window).width() > 992 &&  $(window).width() <= 1200) {
+                return 'left';
+            }
+            else  {
+                return 'left';
+            }
+        }
+    });
+
   </script>
 <%end%>
