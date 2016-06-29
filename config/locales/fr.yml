@@ -18,6 +18,8 @@ fr:
       title: "Vos missions"
       current: "En cours"
       history: "Historique"
+      no-current-mission: "Vous n'avez pas de missions en cours."
+      no-history-links: "Vous ne pouvez pas consulter les missions de l'historique."
     show:
       created_at: "Créée le"
       status: "Statut"

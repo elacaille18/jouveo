@@ -1,5 +1,7 @@
 <div class="card-mission">
-  <%= link_to "", mission_path(mission), class: "card-mission-link"%>
+  <%unless current_user.jouve == false && mission.status != "in_progress"%>
+    <%= link_to "", mission_path(mission), class: "card-mission-link"%>
+  <%end%>
   <div class="card-mission-title">
     <h4><%= mission.title %><%= " - #{mission.company.name.upcase}" if current_user.jouve%></h4>
   </div>

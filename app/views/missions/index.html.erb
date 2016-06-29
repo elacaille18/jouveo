@@ -8,7 +8,7 @@
             <p><%= t ".current" %></p>
           </div>
         </li>
-        <% if current_user.jouve%>
+        <% if @past_missions.any? %>
         <li class="tab" data-target="#history">
           <div>
             <p><%= t ".history" %></p>
@@ -22,17 +22,34 @@
 
   <div class="container">
     <div class="tab-content" id="current">
-      <% @current_missions.each do |mission|%>
+      <% if @current_missions.empty?%>
         <div class="row">
-          <div class="col-xs-11">
-            <%= render "missions/card_mission", mission: mission%>
+          <div class="col-xs-11" id="no-current-mission">
+            <p>
+              <%= I18n.t(".missions.index.no-current-mission")%>
+            </p>
           </div>
         </div>
+      <%else%>
+
+        <% @current_missions.each do |mission|%>
+          <div class="row">
+            <div class="col-xs-11">
+              <%= render "missions/card_mission", mission: mission%>
+            </div>
+          </div>
+        <%end%>
+
       <%end%>
     </div>
-    <% if current_user.jouve%>
+
     <div class="tab-content hidden" id="history">
-     <!-- temporaire -->
+      <!-- message info no links -->
+      <%unless current_user.jouve%>
+      <div id="message-no-link">
+        <p><%= I18n.t(".missions.index.no-history-links")%></p>
+      </div>
+      <%end%>
       <% @past_missions.each do |mission|%>
         <div class="row">
           <div class="col-xs-11">
@@ -41,10 +58,9 @@
         </div>
       <%end%>
     </div>
-    <%end%>
+
   </div>
 </div>
-
 
 <% content_for(:after_js) do %>
   <script>

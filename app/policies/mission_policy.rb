@@ -22,7 +22,11 @@ class MissionPolicy < ApplicationPolicy
 
   def show?
     # Peuvent voir ceux qui font partie de la mission ou ceux sont qui sont associés
-    user_is_part_of_mission? || user.jouve_associate
+    if record.status == "in_progress"
+      user_is_part_of_mission? || user.jouve_associate
+    else
+      (user_is_part_of_mission? || user.jouve_associate) && user_is_jouve?
+    end
     #user_is_owner_or_admin?  A faire plus tard une fois que les admins seront crées
   end
 
@@ -42,7 +46,7 @@ class MissionPolicy < ApplicationPolicy
 
   def update?
     # L'utilisateur fait partie de la mission mais doit aussi être membre de jouve
-    user_is_part_of_mission? && user_is_jouve?
+    ( user_is_part_of_mission? || user.jouve_associate ) && user_is_jouve?
   end
 
   def destroy?
