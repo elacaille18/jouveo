@@ -6,5 +6,7 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require pickers
+//= require sweetalert
+//= require sweet-alert-confirm
 
 //= require moment/fr

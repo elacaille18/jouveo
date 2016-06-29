@@ -270,3 +270,7 @@ fr:
       candidate:
         create: "Créer le/la candidat(e)"
         update: "Enregistrer"
+  sweetalerts:
+    sure: "Etes-vous sûr(e) ?"
+    yes-choice: "Oui"
+    no-choice: "Non"

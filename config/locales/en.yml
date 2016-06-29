@@ -97,3 +97,7 @@ en:
       user:
         create: "Add %{model}"
         update: "Save Changes"
+  sweetalerts:
+    sure: "Are you sure ?"
+    yes-choice: "Yes"
+    no-choice: "No"
