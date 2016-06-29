@@ -44,7 +44,12 @@
     </div>
 
     <div class="tab-content hidden" id="history">
-     <!-- temporaire -->
+      <!-- message info no links -->
+      <%unless current_user.jouve%>
+      <div id="message-no-link">
+        <p><%= I18n.t(".missions.index.no-history-links")%></p>
+      </div>
+      <%end%>
       <% @past_missions.each do |mission|%>
         <div class="row">
           <div class="col-xs-11">
