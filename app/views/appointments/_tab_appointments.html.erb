@@ -36,8 +36,12 @@
           <div class="appointment-interviewer">
             <p>
               <i class="fa fa-user" aria-hidden="true"></i>
-              <%= appointment.interviewer_full_name%> <br/>
-               <span style="font-style:italic;"><%= appointment.interviewer_position%></span>
+              <% if appointment.interviewer_last_name.empty?%>
+                <%= I18n.t(".appointments.to_be_defined")%>
+              <%else%>
+                <%= appointment.interviewer_full_name%> <br/>
+                 <span style="font-style:italic;"><%= appointment.interviewer_position%></span>
+              <%end%>
             </p>
           </div>
           <hr> <!-- To make a bottom border half the width -->
@@ -68,8 +72,12 @@
           <div class="appointment-interviewer">
             <p>
               <i class="fa fa-user" aria-hidden="true"></i>
-              <%= appointment.interviewer_full_name%> <br/>
-               <span style="font-style:italic;"><%= appointment.interviewer_position%></span>
+              <% if appointment.interviewer_last_name.empty?%>
+                <%= I18n.t(".appointments.to_be_defined")%>
+              <%else%>
+                <%= appointment.interviewer_full_name%> <br/>
+                 <span style="font-style:italic;"><%= appointment.interviewer_position%></span>
+              <%end%>
             </p>
           </div>
           <hr> <!-- To make a bottom border half the width -->

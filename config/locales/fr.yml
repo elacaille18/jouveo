@@ -60,12 +60,13 @@ fr:
     add_appointment: "Ajouter un rendez-vous"
     no_appointments: "Vous n'avez pas encore de rendez-vous prévu avec ce candidat."
     next_meetings:
-      one: "Votre prochain rendez-vous"
-      other: "Vos prochains rendez-vous"
+      one: "Prochain rendez-vous"
+      other: "Prochains rendez-vous"
     past_meetings:
-      one: "Votre dernier rendez-vous"
-      other: "Vos rendez-vous passés"
+      one: "Précédent rendez-vous"
+      other: "Précédents rendez-vous"
     edit_appointment: "Modifier le rendez-vous"
+    to_be_defined: "A définir"
   users:
     error_on_duplicate: "Ce client est déjà existant ou vous avez dû faire une erreur dans son adresse email."
     first_name: "Prénom"
