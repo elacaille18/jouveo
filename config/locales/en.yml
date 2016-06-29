@@ -60,12 +60,13 @@ en:
     add_appointment: "Add an appointment"
     no_appointments: "You do not have any appointments forecasted with this candidate."
     next_meetings:
-      one: "Your next appointment"
-      other: "Your next appointments"
+      one: "Next appointment"
+      other: "Next appointments"
     past_meetings:
-      one: "Your past appointment"
-      other: "Your past appointments"
+      one: "Past appointment"
+      other: "Past appointments"
     edit_appointment: "Edit the appointment"
+    to_be_defined: "To be defined"
   users:
     error_on_duplicate: "Sorry this client might already exists or you mistype his mail address."
     first_name: "First name"
@@ -97,3 +98,7 @@ en:
       user:
         create: "Add %{model}"
         update: "Save Changes"
+  sweetalerts:
+    sure: "Are you sure ?"
+    yes-choice: "Yes"
+    no-choice: "No"

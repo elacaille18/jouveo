@@ -28,7 +28,7 @@
               <%= link_to edit_appointment_path(appointment) do%>
                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
               <%end%>
-              <%= link_to mission_candidate_appointment_path(mission, candidate, appointment), method: :delete, data: { confirm: "Etes-vous sure?" } do %>
+              <%= link_to mission_candidate_appointment_path(mission, candidate, appointment), method: :delete, data: { confirm: I18n.t(".sweetalerts.sure"), :'confirm-button-text' => I18n.t(".sweetalerts.yes-choice"), :'cancel-button-text' => I18n.t(".sweetalerts.no-choice"), :'confirm-button-color' => '#4AE3B5', :'image-url' => image_path('logo-HQ.jpg')} do %>
                 <i class="fa fa-trash" aria-hidden="true"></i>
               <%end%>
             <%end%>
@@ -36,8 +36,12 @@
           <div class="appointment-interviewer">
             <p>
               <i class="fa fa-user" aria-hidden="true"></i>
-              <%= appointment.interviewer_full_name%> <br/>
-               <span style="font-style:italic;"><%= appointment.interviewer_position%></span>
+              <% if appointment.interviewer_last_name.empty?%>
+                <%= I18n.t(".appointments.to_be_defined")%>
+              <%else%>
+                <%= appointment.interviewer_full_name%> <br/>
+                 <span style="font-style:italic;"><%= appointment.interviewer_position%></span>
+              <%end%>
             </p>
           </div>
           <hr> <!-- To make a bottom border half the width -->
@@ -60,7 +64,7 @@
               <%= link_to edit_appointment_path(appointment) do%>
                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
               <%end%>
-              <%= link_to mission_candidate_appointment_path(mission, candidate, appointment), method: :delete, data: { confirm: "Etes-vous sure?" } do %>
+              <%= link_to mission_candidate_appointment_path(mission, candidate, appointment), method: :delete, data: { confirm: I18n.t(".sweetalerts.sure"), :'confirm-button-text' => I18n.t(".sweetalerts.yes-choice"), :'cancel-button-text' => I18n.t(".sweetalerts.no-choice"), :'confirm-button-color' => '#4AE3B5', :'image-url' => image_path('logo-HQ.jpg')} do %>
                 <i class="fa fa-trash" aria-hidden="true"></i>
               <%end%>
             <%end%>
@@ -68,8 +72,12 @@
           <div class="appointment-interviewer">
             <p>
               <i class="fa fa-user" aria-hidden="true"></i>
-              <%= appointment.interviewer_full_name%> <br/>
-               <span style="font-style:italic;"><%= appointment.interviewer_position%></span>
+              <% if appointment.interviewer_last_name.empty?%>
+                <%= I18n.t(".appointments.to_be_defined")%>
+              <%else%>
+                <%= appointment.interviewer_full_name%> <br/>
+                 <span style="font-style:italic;"><%= appointment.interviewer_position%></span>
+              <%end%>
             </p>
           </div>
           <hr> <!-- To make a bottom border half the width -->

@@ -35,6 +35,12 @@ gem 'carrierwave'
 # Mailer
 gem 'postmark-rails'
 
+# Sweet alerts
+source "https://rails-assets.org" do
+  gem 'rails-assets-sweetalert'
+end
+gem 'sweet-alert-confirm'
+
 # Select customs
 gem 'chosen-rails'
 gem 'bootstrap-chosen-rails'
