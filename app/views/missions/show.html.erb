@@ -58,7 +58,7 @@
       <div class="team-jouve">
           <h4 class="text-center"><%= I18n.t(".missions.team")%></h4>
 
-        <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Contact" data-placement="left" data-content="<%= @mission.associate.email%>">
+        <a tabindex="0" role="button" data-html=true data-toggle="popover" data-trigger="focus" title="Contact" data-placement="left" data-content='<%= render "users/popover_infos", user:@mission.associate%>'>
           <div class="associate">
             <div class="team-avatar text-center">
               <%if @mission.associate.photo.url %>
@@ -76,7 +76,7 @@
           </div>
         </a>
 
-        <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Contact" data-placement="left" data-content="<%= @mission.consultant.email%>">
+        <a tabindex="0" role="button" data-html=true data-toggle="popover" data-trigger="focus" title="Contact" data-placement="left" data-content='<%= render "users/popover_infos", user:@mission.consultant%>'>
 
           <div class="consultant">
 
@@ -98,7 +98,7 @@
 
         </a>
 
-        <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Contact" data-placement="left" data-content="<%= @mission.assistant.email%>">
+        <a tabindex="0" role="button" data-html=true data-toggle="popover" data-trigger="focus" title="Contact" data-placement="left" data-content='<%= render "users/popover_infos", user:@mission.assistant%>'>
           <div class="assistant">
             <div class="team-avatar text-center">
               <%if @mission.assistant.photo.url %>
