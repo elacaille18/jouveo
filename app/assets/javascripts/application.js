@@ -10,3 +10,6 @@
 //= require sweet-alert-confirm
 
 //= require moment/fr
+
+
+//= require algolia/v3/algoliasearch.min
