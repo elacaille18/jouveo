@@ -54,6 +54,9 @@ gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 # gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
+# search
+gem "algoliasearch-rails"
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

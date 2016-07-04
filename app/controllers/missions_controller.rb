@@ -3,8 +3,10 @@ class MissionsController < ApplicationController
 
   def index
     @missions = policy_scope(Mission).order(created_at: :desc)
-    @current_missions = @missions.select { |mission| mission.status == "in_progress"}
-    @past_missions = @missions.reject { |mission| mission.status == "in_progress"}
+    @hits = Mission.search(params[:q])
+    @hits_selected = @hits & @missions
+    @current_missions = @hits_selected.select { |mission| mission.status == "in_progress"}
+    @past_missions = @hits_selected.reject { |mission| mission.status == "in_progress"}
   end
 
   def show

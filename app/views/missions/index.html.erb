@@ -1,6 +1,22 @@
 <div class="wrapper-gray">
   <div class="container" id="dashboard-mission-headers">
     <h1><%= t ".title" %></h1>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="search">
+          <form action="#" method="get" id="form-search">
+            <div class="input-group">
+              <%= text_field_tag(:q, params[:q], placeholder: "ex: DRH - Kering", class: "form-control", id: "q")%>
+              <span class="input-group-btn">
+                <button class="btn btn-danger" type="button" id="submit-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <div id="tabs-navigation">
       <ul class="tabs list-inline">
         <li class="tab active" data-target="#current">
@@ -17,6 +33,11 @@
         <%end%>
       </ul>
     </div>
+
+
+
+
+
   </div>
 
 
@@ -62,6 +83,8 @@
   </div>
 </div>
 
+
+
 <% content_for(:after_js) do %>
   <script>
 
@@ -87,9 +110,49 @@
         $($(this).data("target")).removeClass('hidden');
       });
 
+
+      $( "#submit-search" ).click(function() {
+        $( "#form-search" ).submit();
+      });
+      // var client = algoliasearch("N3Q3VYZZXP", "edecc8e4f38edc8b580476f42c88b629");
+      // var index = client.initIndex('title');
+      // autocomplete('#search-input', {hint: false}, [
+      //   {
+      //     source: autocomplete.sources.hits(index, {hitsPerPage: 5}),
+      //     displayKey: 'my_attribute',
+      //     templates: {
+      //       suggestion: function(suggestion) {
+      //         return suggestion._highlightResult.my_attribute.value;
+      //       }
+      //     }
+      //   }
+      // ]).on('autocomplete:selected', function(event, suggestion, dataset) {
+      //   console.log(suggestion, dataset);
+      // });
+
     });
 
 
 
+  </script>
+
+  <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+  <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script>
+  <script>
+    // var client = algoliasearch('N3Q3VYZZXP', 'edecc8e4f38edc8b580476f42c88b629')
+    // var index = client.initIndex('Mission');
+    // $('#q').autocomplete({ hint: false }, [
+    //   {
+    //     source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5 }),
+    //     displayKey: 'title',
+    //     templates: {
+    //       suggestion: function(suggestion) {
+    //         return suggestion._highlightResult.title.value;
+    //       }
+    //     }
+    //   }
+    // ]).on('autocomplete:selected', function(event, suggestion, dataset) {
+    //   console.log(suggestion, dataset);
+    // });
   </script>
 <% end %>
