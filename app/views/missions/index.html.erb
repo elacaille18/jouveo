@@ -7,7 +7,7 @@
         <div class="search">
           <form action="#" method="get" id="form-search">
             <div class="input-group">
-              <%= text_field_tag(:q, params[:q], placeholder: "ex: DRH - Kering", class: "form-control", id: "q")%>
+              <%= text_field_tag(:q, params[:q], placeholder: "ex: DRH", class: "form-control", id: "q")%>
               <span class="input-group-btn">
                 <button class="btn btn-danger" type="button" id="submit-search"><i class="fa fa-search" aria-hidden="true"></i></button>
               </span>
@@ -16,7 +16,15 @@
         </div>
       </div>
     </div>
-
+    <div class="row">
+      <div class="col-sm-6">
+        <div id="all-button">
+          <%= link_to missions_path do %>
+            <i class="fa fa-align-justify" aria-hidden="true"></i> <%=I18n.t(".missions.index.all")%>
+          <%end%>
+        </div>
+      </div>
+    </div>
     <div id="tabs-navigation">
       <ul class="tabs list-inline">
         <li class="tab active" data-target="#current">
