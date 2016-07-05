@@ -17,6 +17,7 @@ en:
       all: "All my missions"
       back: "Back to my missions"
       title: "Your missions"
+      placeholder-search: "eg: Manager.. "
       current: "Current"
       history: "History"
       no-current-mission: "You do not have any missions at the moment."

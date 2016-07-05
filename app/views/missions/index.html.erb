@@ -7,12 +7,15 @@
         <div class="search">
           <form action="#" method="get" id="form-search">
             <div class="input-group">
-              <%= text_field_tag(:q, params[:q], placeholder: "ex: DRH", class: "form-control", id: "q")%>
+              <%= text_field_tag(:q, params[:q], placeholder: I18n.t("missions.index.placeholder-search"), class: "form-control", id: "q")%>
               <span class="input-group-btn">
                 <button class="btn btn-danger" type="button" id="submit-search"><i class="fa fa-search" aria-hidden="true"></i></button>
               </span>
             </div>
           </form>
+        </div>
+        <div id="algolia-credentials" class="text-right">
+          <p><span id="powered"> Powered by </span><%= cl_image_tag("algolia_ajhqe3.jpg", width:60)%></p>
         </div>
       </div>
     </div>
