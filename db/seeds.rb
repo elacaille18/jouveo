@@ -20,10 +20,10 @@
 
 require 'csv'
 
-#Company.destroy_all
+Company.destroy_all
 
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-filepath = '/Users/ericlacaille/Desktop/companies.csv'
+filepath = '/Users/ericlacaille/Desktop/companies1.csv'
 
 CSV.foreach(filepath, csv_options) do |row|
   # Here, row is an array of columns

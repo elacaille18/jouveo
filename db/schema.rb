@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627080902) do
+ActiveRecord::Schema.define(version: 20160705142613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,8 +40,10 @@ ActiveRecord::Schema.define(version: 20160627080902) do
     t.string   "compensation_variable"
     t.string   "compensation_others"
     t.string   "photo"
+    t.integer  "company_id"
   end
 
+  add_index "candidates", ["company_id"], name: "index_candidates_on_company_id", using: :btree
   add_index "candidates", ["mission_id"], name: "index_candidates_on_mission_id", using: :btree
 
   create_table "companies", force: :cascade do |t|
@@ -104,15 +106,8 @@ ActiveRecord::Schema.define(version: 20160627080902) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "users_missions", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "mission_id"
-  end
-
-  add_index "users_missions", ["mission_id"], name: "index_users_missions_on_mission_id", using: :btree
-  add_index "users_missions", ["user_id"], name: "index_users_missions_on_user_id", using: :btree
-
   add_foreign_key "appointments", "candidates"
+  add_foreign_key "candidates", "companies"
   add_foreign_key "candidates", "missions"
   add_foreign_key "missions", "companies"
   add_foreign_key "missions", "users", column: "assistant_id"
