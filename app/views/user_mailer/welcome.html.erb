@@ -1,26 +1,79 @@
-<p>Dear <%= @user.first_name%>,</p>
+<style>
+  body {
+    font-family: Calibri;
+    font-size: 16;
+  }
 
-<p>Jouve & Associés allows you to have instant look at your current missions with its platform Jouveo.
-Please go on this website: <a href="https://jouveo.herokuapp.com" alt="jouveo" target="_blank">www.jouveo.com</a>
-</p>
+  #footer-mail {
+    font-style: italic;
+    font-size: 10;
+  }
+</style>
 
-<!-- <p>Jouve & Associés vous permet désormais de consulter vos missions sur sa plateforme Jouveo.
-Veuillez vous rendre sur le site: <a href="https://jouveo.herokuapp.com" alt="jouveo" target="_blank">www.jouveo.com</a>
-</p>
- -->
-<p>Please use the email address on which you received this message: <%= @user.email%> <br/>
-Your password is the following: <strong><%= @password %></strong> <br/>
-You will be able to modify it at your first login (go to your profile page and click on the "edit" link).
-</p>
+<body>
+  <p>
+    Dear <%= @user.first_name.capitalize%>,
+    <br/>
+    <br/>
+  </p>
 
-<!-- <p>Veuillez utiliser l'adresse email sur laquelle vous est parvenu cet email: <%= @user.email%> <br/>
-Votre mot de passe est le suivant: <strong><%= @password %></strong> <br/>
-Vous pourrez le changer à la première connexion.
-</p>
- -->
-<p>
+  <p>Jouve & Associés grants you access to Jouveo, the platform dedicated to our clients.<br/>
+  Jouveo gathers the shortlisted candidates' details, resume and appointments for your on-going searches.
+  </p>
 
-Jouve & Associés <br/>
-54 avenue Marceau <br/>
-75008 Paris
-</p>
+  <p>
+  Please go to this website: <a href="https://jouveo.herokuapp.com" alt="jouveo" target="_blank">www.jouveo.com</a><br/> Your login: <%= @user.email%> <br/>
+  Your password: <strong><%= @password %></strong> <br/>
+  In order to change your password after your first login, simply go to your profile page and click on the "edit" link.
+  <br/>
+
+  </p>
+  <p>If you face any technical issue, do not hesitate to contact us.</p>
+  <br/>
+  <p>Best regards,
+  <br/>
+  <br/>
+  </p>
+
+
+  <p>
+    Cher/Chère <%= @user.first_name.capitalize%>,
+    <br/>
+    <br/>
+  </p>
+
+  <p>Jouve & Associés vous autorise à accéder à Jouveo, la plateforme dédiée à nos clients.<br/>
+  Jouveo réunit les informations, les résumés et les rendez-vous des candidats présélectionnés pour vos missions en cours.
+  </p>
+
+  <p>
+  Veuillez vous rendre sur le site: <a href="https://jouveo.herokuapp.com" alt="jouveo" target="_blank">www.jouveo.com</a><br/> Votre login: <strong><%= @user.email%></strong> <br/>
+  Votre mot de passe: <strong><%= @password %></strong> <br/>
+  Afin de modifier votre mot de passe après votre première connexion, rendez vous simplement sur votre page profil et cliquer sur le lien "Modifier".
+  <br/>
+
+  </p>
+  <p>Si vous rencontrez un problème technique, n'hésitez pas à nous contacter.</p>
+  <br/>
+  <p>Cordialement,
+  <br/>
+  <br/>
+  </p>
+  <p>
+  Jouve & Associés <br/>
+  54 avenue Marceau <br/>
+  75008 Paris<br>
+  Tel : (33)1 40 70 90 00
+  </p>
+
+  <div id="footer-mail">
+  <br/>
+  <p>
+  This message is intended solely for the addresses whose e-mail addresses are indicated above. If you have received this message by mistake, please delete it immediately and notify the sender. The information contained in this message should be considered as confidential. Any use in any way or transmission to a third party is strictly prohibited, and could engage your civil or penal liability.
+  </p>
+  <p>
+  Ce message est exclusivement destiné aux personnes dont les adresses e-mail figurent ci-dessus. Si vous avez reçu ce message par erreur, merci de le détruire immédiatement et d'avertir l'expéditeur. Les informations contenues dans ce message doivent être considérées comme des informations confidentielles. Il est interdit d'en faire usage de quelque manière que ce soit ou de les communiquer à des tiers, sous peine d'engager votre responsabilité civile ou pénale.
+  </p>
+  </div>
+
+</body>
