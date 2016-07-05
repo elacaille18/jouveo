@@ -16,9 +16,9 @@ class MissionPolicy < ApplicationPolicy
     end
   end
 
-  def index?
-    user_is_owner_or_admin?
-  end
+  # def index?
+  #   user_is_owner_or_admin?
+  # end
 
   def show?
     # Peuvent voir ceux qui font partie de la mission ou ceux sont qui sont associés
