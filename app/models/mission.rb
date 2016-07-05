@@ -26,7 +26,7 @@ class Mission < ActiveRecord::Base
 
   # Validations
   STATUS = %w(in_progress closed cancelled)
-  validates :title, presence: true
+  validates :title, presence: true, allow_blank: false
   validates :company, presence: true
   validates :status, inclusion: {in: STATUS}
   validates :associate, presence: true

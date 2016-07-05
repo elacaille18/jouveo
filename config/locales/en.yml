@@ -40,6 +40,7 @@ en:
     edit_mission: "Edit the search"
     add_candidate: "Add a candidate"
     team: "J&A team"
+    error-title: "Please fill in this field."
   candidates:
     edit_candidate: "Edit the candidate"
     first_name: "First name"

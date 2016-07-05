@@ -40,6 +40,7 @@ fr:
     edit_mission: "Modifier la mission"
     add_candidate: "Ajouter un candidat"
     team: "L'équipe J&A"
+    error-title: "Veuillez remplir ce champ."
   candidates:
     edit_candidate: "Modifier le candidat"
     first_name: "Prénom"
