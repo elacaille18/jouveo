@@ -1,7 +1,11 @@
 <div id="form-mission-content">
   <%= simple_form_for (mission) do |f|%>
-    <%= f.input :title, label: I18n.t(".missions.show.title")%>
-
+    <%= f.input :title, label: I18n.t(".missions.show.title") %>
+    <div id="error-title" class="hidden" style="color:#800000;">
+      <p>
+        <%= I18n.t(".missions.error-title")%>
+      </p>
+    </div>
     <%= f.association :company, collection: Company.order(:name), label: I18n.t(".missions.show.company"), label_method: :name, value_method: :id, include_blank: false%>
     <%= f.input :status, label: I18n.t(".missions.show.status"), collection: Mission::STATUS%>
     <%= f.association :associate, label: I18n.t(".missions.show.associate"), collection: partners, label_method: :full_name, value_method: :id, include_blank: false %>
@@ -69,7 +73,27 @@
   <script>
   $(document).ready(function(){
     $('.chzn-select').chosen();
+
+    // Gestion titre vide
+    $("#new_mission").submit(function(){
+        var isFormValid = true;
+
+
+        if ($.trim($("#mission_title").val()).length == 0){
+            console.log("titre non valide");
+            $("#error-title").removeClass('hidden');
+            isFormValid = false;
+        }
+        else{
+            console.log("titre valide");
+        }
+
+        // if (!isFormValid) ;
+
+        return isFormValid;
+    });
   });
+
   </script>
 <% end %>
 
