@@ -14,8 +14,10 @@ fr:
   create_candidate: "Créer un candidat"
   missions:
     index:
+      all: "Toutes mes missions"
       back: "Retour à mes missions"
       title: "Vos missions"
+      placeholder-search: "ex: Directeur..."
       current: "En cours"
       history: "Historique"
       no-current-mission: "Vous n'avez pas de missions en cours."

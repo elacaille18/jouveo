@@ -6,20 +6,22 @@ en:
   sign_out: "Log out"
   home: "Home"
   profile: "My profile"
-  home-button: "My current missions"
+  home-button: "My current searches"
   welcome: "Welcome on Jouveo"
-  tagline: "Overview and manage your missions with Jouve & Associés"
+  tagline: "Overview and manage your searches with Jouve & Associés"
   close: "Close"
-  create_mission: "Create a mission"
+  create_mission: "Create a search"
   create_candidate: "Create a candidate"
   missions:
     index:
-      back: "Back to my missions"
-      title: "Your missions"
+      all: "All my searches"
+      back: "Back to my searches"
+      title: "Your searches"
+      placeholder-search: "eg: Manager.. "
       current: "Current"
       history: "History"
-      no-current-mission: "You do not have any missions at the moment."
-      no-history-links: "You cannot access the missions of your history."
+      no-current-search: "You do not have any searches at the moment."
+      no-history-links: "You cannot access the searches of your history."
     show:
       created_at: "Created on"
       status: "Status"
@@ -35,7 +37,7 @@ en:
     in_progress: "In progress"
     closed: "Closed"
     cancelled: "Cancelled"
-    edit_mission: "Edit the mission"
+    edit_mission: "Edit the search"
     add_candidate: "Add a candidate"
     team: "J&A team"
   candidates:
@@ -97,7 +99,10 @@ en:
     submit:
       user:
         create: "Add %{model}"
-        update: "Save Changes"
+        update: "Save changes"
+      mission:
+        create: "Add a search"
+        update: "Save changes"
   sweetalerts:
     sure: "Are you sure ?"
     yes-choice: "Yes"
