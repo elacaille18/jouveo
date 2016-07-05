@@ -20,12 +20,11 @@
 
 require 'csv'
 
-Company.destroy_all
+#Company.destroy_all
 
-csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-filepath = '/Users/ericlacaille/Desktop/companies1.csv'
-
-CSV.foreach(filepath, csv_options) do |row|
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'companies1.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
   # Here, row is an array of columns
   company_name = row[0]
   company = Company.new({name: company_name})
