@@ -137,7 +137,7 @@
     </div>
 
     <div class="candidates-list">
-      <%@mission.candidates.each do |candidate| %>
+      <%@mission.candidates.sort_by{ |candidate| candidate.last_name }.each do |candidate| %>
         <%= render "candidates/card_candidate", candidate: candidate, appointment: @appointment %>
       <%end%>
     </div>

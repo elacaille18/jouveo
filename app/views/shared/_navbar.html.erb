@@ -28,7 +28,7 @@
         <div class="dropdown">
 
           <div class="dropdown_user", id="navbar-wagon-menu", data-toggle="dropdown", data-hover="dropdown", data-delay="100" >
-            <span><%= current_user.first_name %></span>
+            <span><%= current_user.first_name.capitalize %></span>
             <span>
               <%if current_user.photo.url %>
                 <%= cl_image_tag current_user.photo, width: 35, height: 35, gravity:"face", radius:"max", crop:"fill", class: "img-round" %>

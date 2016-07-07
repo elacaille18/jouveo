@@ -9,6 +9,6 @@ class Appointment < ActiveRecord::Base
   # validates :interviewer_position, presence: true
 
   def interviewer_full_name
-    "#{self.interviewer_first_name.capitalize} #{self.interviewer_last_name}"
+    "#{self.interviewer_first_name.capitalize} #{self.interviewer_last_name.upcase}"
   end
 end

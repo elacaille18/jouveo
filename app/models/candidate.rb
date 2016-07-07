@@ -4,7 +4,7 @@ class Candidate < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
 
   # Associations
-  belongs_to :mission
+  belongs_to :mission, touch: true
   has_many :appointments, dependent: :destroy
 
 

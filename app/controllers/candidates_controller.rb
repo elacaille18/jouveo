@@ -12,6 +12,7 @@ class CandidatesController < ApplicationController
     @candidate.mission = @mission
     authorize @candidate
     if @candidate.save
+        @candidate.touch
        redirect_to mission_path(@mission), notice: "The candidate #{@candidate.first_name} #{@candidate.last_name} has been added to your mission." #A changer dans les traduction
     else
        render "new"
@@ -29,6 +30,7 @@ class CandidatesController < ApplicationController
     @candidate.update(candidate_params)
     authorize @candidate
     if @candidate.save
+      @candidate.touch
       redirect_to mission_path(@candidate.mission)
     else
       render :edit
