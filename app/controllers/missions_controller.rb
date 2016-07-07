@@ -2,9 +2,10 @@ class MissionsController < ApplicationController
   before_action :set_mission, only: [:show, :edit, :update]
 
   def index
-    @missions = policy_scope(Mission).order(created_at: :desc)
+    @missions = policy_scope(Mission).order(updated_at: :desc)
     @hits = Mission.search(params[:q])
     @hits_selected = @hits & @missions
+    @hits_selected.sort!{|a,b| b.updated_at <=> a.updated_at}
     @current_missions = @hits_selected.select { |mission| mission.status == "in_progress"}
     @past_missions = @hits_selected.reject { |mission| mission.status == "in_progress"}
   end
