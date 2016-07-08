@@ -22,6 +22,7 @@ fr:
             password:
               blank: "Veuillez spécifer un mot de passe"
               confirmation: "Le mot de passe n'a pas été confirmé"
+              too_short: "Votre mot de passe doit contenir 6 caractères minimum."
             password_confirmation:
               blank: "Veuillez confirmer votre mot de passe"
               confirmation: "Les deux mots de passe ne concordent pas"

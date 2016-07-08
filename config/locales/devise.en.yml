@@ -15,6 +15,7 @@ en:
             password:
               blank: "Please Specify a Password"
               confirmation: "Password does not match"
+              too_short: "Your password must have at least 6 characters"
             password_confirmation:
               blank: "Please Specify a Password Confirmation"
               confirmation: "There is a mismatch in your new password request"
