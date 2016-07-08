@@ -53,6 +53,7 @@ fr:
     contact_in_progress: "Contact en cours"
     jouve_interviewing: "Entretien Jouve"
     client_interviewing: "Entretien client"
+    withdrew: "Ne donne pas suite"
     rejected: "Non retenu"
   appointments:
     interviewer_first_name: "Prénom de l'interviewer"

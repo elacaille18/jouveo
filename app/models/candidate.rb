@@ -9,7 +9,7 @@ class Candidate < ActiveRecord::Base
 
 
   # Validations
-  STATUS = %w(jouve_interviewing client_interviewing rejected)
+  STATUS = %w(jouve_interviewing client_interviewing withdrew rejected)
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :status, inclusion: {in: STATUS}
