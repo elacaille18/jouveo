@@ -27,22 +27,29 @@
 
       <div class="row">
         <div class="col-xs-12 col-sm-7 col-sm-offset-1">
-          <div class="candidate-infos">
-            <h4> <%= candidate.first_name.capitalize %> <%= candidate.last_name.upcase%> </h4>
-          </div>
-          <div class="resume-link">
-          <!-- Button triger de modal excepté sur petit devices-->
-            <button type="button" class="btn btn-link hidden-xs" data-toggle="modal" data-target="#modal_<%=candidate.id%>">
-              <i class="fa fa-file-o" aria-hidden="true"></i>
-              <%= I18n.t(".candidates.resume")%>
-            </button>
-          <!-- Lien vers autre page pour display pdf sur petit device -->
-            <%=link_to "http://res.cloudinary.com/jouve/#{candidate.resume.identifier}", class:"btn btn-link hidden-sm hidden-md hidden-lg", target:"_blank" do %>
-              <i class="fa fa-file-o" aria-hidden="true"></i>
-              <%= I18n.t(".candidates.resume")%>
-            <%end%>
-          </div>
+          <!-- <div class="wrapper-middle-candidate"> -->
 
+            <div class="candidate-infos">
+              <h4> <%= candidate.first_name.capitalize %> <%= candidate.last_name.upcase%> </h4>
+            </div>
+
+            <!-- Test la présence de résumé -->
+            <% if candidate.resume.url %>
+              <div class="resume-link">
+                <!-- Button triger de modal excepté sur petit devices-->
+                <button type="button" class="btn btn-link hidden-xs" data-toggle="modal" data-target="#modal_<%=candidate.id%>">
+                  <i class="fa fa-file-o" aria-hidden="true"></i>
+                  <%= I18n.t(".candidates.resume")%>
+                </button>
+                <!-- Lien vers autre page pour display pdf sur petit device -->
+                <%=link_to "http://res.cloudinary.com/jouve/#{candidate.resume.identifier}", class:"btn btn-link hidden-sm hidden-md hidden-lg", target:"_blank" do %>
+                  <i class="fa fa-file-o" aria-hidden="true"></i>
+                  <%= I18n.t(".candidates.resume")%>
+                <%end%>
+              </div>
+            <%end%>
+
+          <!-- </div> -->
         </div>
 
         <div class="col-xs-12 col-sm-4">
