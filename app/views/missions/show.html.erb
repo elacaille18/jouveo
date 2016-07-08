@@ -173,7 +173,11 @@
                   <%= appointment.candidate.full_name%>
                 </div>
                 <div class="col-xs-4 text-center">
-                  <%= appointment.interviewer_full_name%>
+                  <% if appointment.interviewer_last_name.empty?%>
+                    <span style="font-style:italic;"><%= I18n.t(".appointments.to_be_defined")%></span>
+                  <%else%>
+                    <%= appointment.interviewer_full_name%>
+                  <%end%>
                 </div>
               </div>
             </div>

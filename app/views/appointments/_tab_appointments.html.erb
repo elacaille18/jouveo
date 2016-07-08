@@ -37,7 +37,7 @@
             <p>
               <i class="fa fa-user" aria-hidden="true"></i>
               <% if appointment.interviewer_last_name.empty?%>
-                <%= I18n.t(".appointments.to_be_defined")%>
+                <span style="font-style:italic;"><%= I18n.t(".appointments.to_be_defined")%></span>
               <%else%>
                 <%= appointment.interviewer_full_name%> <br/>
                  <span style="font-style:italic;"><%= appointment.interviewer_position%></span>
