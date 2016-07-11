@@ -1,8 +1,8 @@
 <%= simple_form_for(appointment) do |f| %>
-  <%= f.input :begins_at%>
-  <%= f.input :interviewer_first_name%>
-  <%= f.input :interviewer_last_name%>
-  <%= f.input :interviewer_position%>
+  <%= f.input :begins_at, label: I18n.t(".appointments.schedule") %>
+  <%= f.input :interviewer_first_name, label: I18n.t(".appointments.interviewer_first_name")%>
+  <%= f.input :interviewer_last_name, label: I18n.t(".appointments.interviewer_last_name")%>
+  <%= f.input :interviewer_position, label: I18n.t(".appointments.interviewer_position")%>
   <div class="text-center">
   <%= f.button :submit, class:"btn navbar-wagon-button"%>
   </div>
