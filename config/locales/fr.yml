@@ -47,7 +47,7 @@ fr:
     last_name: "Nom"
     compensation_fix: "Rémuneration fixe"
     compensation_variable: "Rémuneration variable"
-    compensation_others: "Autres rémunérations"
+    compensation_others: "Autres rémunerations"
     resume: "CV"
     status: "Statut"
     contact_in_progress: "Contact en cours"
