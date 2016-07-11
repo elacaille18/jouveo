@@ -56,6 +56,7 @@ en:
     withdrew: "Withdrew"
     rejected: "Rejected"
   appointments:
+    appointment: "Appointment"
     interviewer_first_name: "Interviewer first name"
     interviewer_last_name: "Interviewer last name"
     interviewer_position: "Interviewer position"
