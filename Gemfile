@@ -1,20 +1,20 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
-gem 'rails', '4.2.6'
+gem 'rails', '5.2.4.2'
 gem 'puma'
 gem 'pg'
 gem 'figaro'
-gem 'jbuilder', '~> 2.0'
-gem 'devise'
+gem 'jbuilder', '~> 2.5', '>= 2.5.0'
+gem 'devise', '>= 4.4.2'
 gem 'redis'
 
-gem 'sass-rails'
-gem 'jquery-rails'
+gem 'sass-rails', '>= 5.0.5'
+gem 'jquery-rails', '>= 4.1.1'
 gem 'uglifier'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
-gem 'simple_form'
+gem 'simple_form', '>= 4.0.0'
 gem 'autoprefixer-rails'
 
 #locales
@@ -23,17 +23,17 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 
 # Policies
-gem 'pundit'
+gem 'pundit', '>= 1.1.0'
 
 # Seed
 gem 'faker'
 
 # Upload
 gem 'cloudinary'
-gem 'carrierwave'
+gem 'carrierwave', '>= 0.11.2'
 
 # Mailer
-gem 'postmark-rails'
+gem 'postmark-rails', '>= 0.12.0'
 
 # Sweet alerts
 source "https://rails-assets.org" do
@@ -42,25 +42,25 @@ end
 gem 'sweet-alert-confirm'
 
 # Select customs
-gem 'chosen-rails'
+gem 'chosen-rails', '>= 1.5.2'
 gem 'bootstrap-chosen-rails'
 
 # Admin interface
-gem 'rails_admin'
+gem 'rails_admin', '>= 1.0.0'
 #gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 
 # DateTime Picker
-gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
+gem 'momentjs-rails', '~> 2.11', '>= 2.11.1'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 # gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
 # search
-gem "algoliasearch-rails"
+gem "algoliasearch-rails", ">= 1.14.1"
 
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
-  gem 'quiet_assets'
+  gem 'quiet_assets', '>= 1.1.0'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
