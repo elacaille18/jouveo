@@ -46,7 +46,7 @@ gem 'chosen-rails'
 gem 'bootstrap-chosen-rails'
 
 # Admin interface
-gem 'rails_admin'
+gem 'rails_admin', '>= 1.2.0'
 #gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 
 # DateTime Picker
