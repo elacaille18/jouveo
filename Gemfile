@@ -30,7 +30,7 @@ gem 'faker'
 
 # Upload
 gem 'cloudinary'
-gem 'carrierwave'
+gem 'carrierwave', '>= 1.3.2'
 
 # Mailer
 gem 'postmark-rails'
