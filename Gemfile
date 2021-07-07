@@ -65,7 +65,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'spring'
 
-  gem "letter_opener"
+  gem "letter_opener", ">= 1.4.1"
 
 end
 
