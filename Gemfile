@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
-gem 'rails', '4.2.6'
+gem 'rails', '5.2.8.1'
 gem 'puma'
 gem 'pg'
 gem 'figaro'
@@ -46,7 +46,7 @@ gem 'chosen-rails'
 gem 'bootstrap-chosen-rails'
 
 # Admin interface
-gem 'rails_admin'
+gem 'rails_admin', '>= 1.0.0'
 #gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 
 # DateTime Picker
