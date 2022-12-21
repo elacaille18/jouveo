@@ -9,7 +9,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
 
-gem 'sass-rails'
+gem 'sass-rails', '>= 6.0.0'
 gem 'jquery-rails'
 gem 'uglifier'
 gem 'bootstrap-sass'
@@ -46,7 +46,7 @@ gem 'chosen-rails'
 gem 'bootstrap-chosen-rails'
 
 # Admin interface
-gem 'rails_admin'
+gem 'rails_admin', '>= 2.0.0'
 #gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 
 # DateTime Picker
