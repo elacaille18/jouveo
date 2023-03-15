@@ -1,20 +1,20 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
-gem 'rails', '4.2.6'
+gem 'rails', '6.1.7.3'
 gem 'puma'
 gem 'pg'
 gem 'figaro'
-gem 'jbuilder', '~> 2.0'
-gem 'devise'
+gem 'jbuilder', '~> 2.6', '>= 2.6.4'
+gem 'devise', '>= 4.7.0'
 gem 'redis'
 
-gem 'sass-rails'
+gem 'sass-rails', '>= 5.0.8'
 gem 'jquery-rails'
 gem 'uglifier'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
-gem 'simple_form'
+gem 'simple_form', '>= 4.0.0'
 gem 'autoprefixer-rails'
 
 #locales
@@ -46,7 +46,7 @@ gem 'chosen-rails'
 gem 'bootstrap-chosen-rails'
 
 # Admin interface
-gem 'rails_admin'
+gem 'rails_admin', '>= 2.0.0'
 #gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 
 # DateTime Picker
