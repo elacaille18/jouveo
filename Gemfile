@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
-gem 'rails', '6.1.7.3'
+gem 'rails', '7.0.0'
 gem 'puma', '>= 4.3.12'
 gem 'pg'
 gem 'figaro'
@@ -42,11 +42,11 @@ end
 gem 'sweet-alert-confirm'
 
 # Select customs
-gem 'chosen-rails'
+gem 'chosen-rails', '>= 1.9.0'
 gem 'bootstrap-chosen-rails'
 
 # Admin interface
-gem 'rails_admin', '>= 2.0.0'
+gem 'rails_admin', '>= 3.0.0'
 #gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 
 # DateTime Picker
