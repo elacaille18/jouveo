@@ -1,20 +1,20 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
-gem 'rails', '6.1.7.3'
+gem 'rails', '7.1.0'
 gem 'puma', '>= 4.3.12'
 gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.6', '>= 2.6.4'
-gem 'devise', '>= 4.7.1'
+gem 'devise', '>= 4.7.0'
 gem 'redis'
 
 gem 'sass-rails', '>= 6.0.0'
-gem 'jquery-rails', '>= 4.4.0'
+gem 'jquery-rails', '>= 4.2.0'
 gem 'uglifier'
 gem 'bootstrap-sass', '>= 3.4.0'
 gem 'font-awesome-sass'
-gem 'simple_form', '>= 5.0.0'
+gem 'simple_form', '>= 4.0.0'
 gem 'autoprefixer-rails'
 
 #locales
@@ -23,17 +23,17 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 
 # Policies
-gem 'pundit'
+gem 'pundit', '>= 2.0.0'
 
 # Seed
 gem 'faker'
 
 # Upload
 gem 'cloudinary'
-gem 'carrierwave', '>= 1.3.2'
+gem 'carrierwave', '>= 1.0.0'
 
 # Mailer
-gem 'postmark-rails'
+gem 'postmark-rails', '>= 0.13.0'
 
 # Sweet alerts
 source "https://rails-assets.org" do
@@ -42,11 +42,11 @@ end
 gem 'sweet-alert-confirm'
 
 # Select customs
-gem 'chosen-rails'
+gem 'chosen-rails', '>= 1.8.2'
 gem 'bootstrap-chosen-rails'
 
 # Admin interface
-gem 'rails_admin', '>= 2.0.0'
+gem 'rails_admin', '>= 3.0.0'
 #gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 
 # DateTime Picker
@@ -55,17 +55,17 @@ gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: '
 # gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
 # search
-gem "algoliasearch-rails"
+gem "algoliasearch-rails", ">= 1.15.0"
 
 group :development, :test do
   gem 'binding_of_caller'
-  gem 'better_errors', '>= 2.8.0'
+  gem 'better_errors', '>= 2.2.0'
   gem 'quiet_assets'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
 
-  gem "letter_opener"
+  gem "letter_opener", ">= 1.5.0"
 
 end
 
